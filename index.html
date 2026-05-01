@@ -584,44 +584,169 @@
       border-top: 1px solid var(--color-border);
     }
 
-    .reviews-placeholder {
-      background: var(--color-bg-elevated);
-      border: 2px dashed var(--color-border-medium);
-      border-radius: var(--border-radius-xl);
-      padding: var(--space-10) var(--space-6);
-      text-align: center;
+    /* ── Review cards ── */
+    .reviews-aggregate {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: var(--space-4);
+      justify-content: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-10);
+      flex-wrap: wrap;
     }
 
-    @media (min-width: 640px) {
-      .reviews-placeholder { padding: var(--space-16) var(--space-8); }
-    }
-
-    .reviews-placeholder__stars {
+    .reviews-aggregate__stars {
       display: flex;
-      gap: var(--space-1);
+      gap: 3px;
     }
 
-    .reviews-placeholder__star {
-      width: 28px;
-      height: 28px;
+    .reviews-aggregate__star {
+      width: 20px;
+      height: 20px;
       color: var(--color-accent-gold);
     }
 
-    .reviews-placeholder__title {
-      font-size: var(--text-xl);
+    .reviews-aggregate__score {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--color-text-primary);
+      letter-spacing: -0.03em;
+    }
+
+    .reviews-aggregate__label {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 640px) {
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .reviews-grid .review-card:first-child {
+        grid-column: span 2;
+      }
+    }
+
+    .review-card {
+      background: var(--color-bg-base);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-xl);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: box-shadow var(--transition-normal), border-color var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .review-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(184,144,42,0.2);
+      transform: translateY(-2px);
+    }
+
+    .review-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+
+    .review-card__stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .review-card__star {
+      width: 16px;
+      height: 16px;
+      color: var(--color-accent-gold);
+    }
+
+    .review-card__verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #22c55e;
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.2);
+      border-radius: 99px;
+      padding: 3px 8px;
+      white-space: nowrap;
+    }
+
+    .review-card__verified::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+
+    .review-card__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .review-card__body {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .review-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .review-card__author {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .review-card__name {
+      font-size: var(--text-sm);
       font-weight: 700;
       color: var(--color-text-primary);
     }
 
-    .reviews-placeholder__sub {
-      font-size: var(--text-base);
+    .review-card__location {
+      font-size: 11px;
       color: var(--color-text-muted);
-      max-width: 400px;
-      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .review-card__date {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      white-space: nowrap;
     }
 
     /* ── Final CTA ── */
@@ -1178,16 +1303,136 @@
         <p class="section-header__subtitle">5&#9733; reviews from real customers will help you understand what to expect</p>
       </div>
 
-      <div class="reviews-placeholder reveal reveal--delay-1" role="region" aria-label="Customer reviews placeholder">
-        <div class="reviews-placeholder__stars" aria-label="5 stars">
-          <svg class="reviews-placeholder__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="reviews-placeholder__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="reviews-placeholder__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="reviews-placeholder__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="reviews-placeholder__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <!-- Aggregate rating -->
+      <div class="reviews-aggregate reveal reveal--delay-1" aria-label="Overall customer rating">
+        <div class="reviews-aggregate__stars" aria-label="5 stars">
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <div class="reviews-placeholder__title">Insert 5&#9733; review collage here</div>
-        <div class="reviews-placeholder__sub">Embed a collage of brain fog-related customer reviews to create cast iron reassurance through social proof</div>
+        <span class="reviews-aggregate__score">4.9</span>
+        <span class="reviews-aggregate__label">from verified purchasers</span>
+      </div>
+
+      <!-- Review cards -->
+      <div class="reviews-grid" role="list" aria-label="Customer reviews">
+
+        <!-- Review 1: Sylridx — 2 years, brain fog gone -->
+        <article class="review-card reveal" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">Been using nad regen for 2 years</h3>
+          <p class="review-card__body">Been using nad regen for 2 years now, it took it about 4 months to start working but when it did I truly felt it. The brain fog is gone and I can remember what I read now. Highly recommend, remember stick with it for a couple months to see results.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Sylridx</span>
+              <span class="review-card__location">&#127482;&#127480; Webster, US</span>
+            </div>
+            <span class="review-card__date">Feb 12, 2026</span>
+          </div>
+        </article>
+
+        <!-- Review 2: Frank S. — 7 months, brain fog lifted -->
+        <article class="review-card reveal reveal--delay-1" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+          <h3 class="review-card__title">Say Goodbye to Brain Fog</h3>
+          <p class="review-card__body">I have been taking NAD REGEN for approximately 7 months now. This addition has skyrocketed my energy levels both mentally and physically. I no longer get the 3pm lack of energy like I used to. The brain fog also lifted very quickly in my case. I&#8217;m 67 years of age and workout 6&#8211;7 days a week, my HRV has increased as well.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Frank S.</span>
+              <span class="review-card__location">&#127482;&#127480; Daytona Beach, US</span>
+            </div>
+            <span class="review-card__date">Feb 15, 2026</span>
+          </div>
+        </article>
+
+        <!-- Review 3: Dana — 9 months, energy improvement -->
+        <article class="review-card reveal reveal--delay-2" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">9 Month Review</h3>
+          <p class="review-card__body">It has been nine months to the day since I started taking this product. I am 35 and have been on a journey to find the right supplements to help me be proactive in aging. Slowly and quietly I didn&#8217;t need energy drinks anymore and even rarely do I need coffee in the mornings. It took time to see the effects but I believe I will notice it even more in the years to come.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Dana</span>
+              <span class="review-card__location">&#127482;&#127480; Crestwood, US</span>
+            </div>
+            <span class="review-card__date">Feb 13, 2026</span>
+          </div>
+        </article>
+
+        <!-- Review 4: Smokey — can tell a difference -->
+        <article class="review-card reveal reveal--delay-3" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">NAD Regen is amazing</h3>
+          <p class="review-card__body">NAD Regen is amazing. I wasn&#8217;t expecting too much when I first tried it. I&#8217;ve been using countless supplements for many years to get a little more performance out of my trading and everyday life. I can tell a difference when I take this.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Smokey</span>
+              <span class="review-card__location">&#127482;&#127480; Richardson, US</span>
+            </div>
+            <span class="review-card__date">Mar 8, 2026</span>
+          </div>
+        </article>
+
+        <!-- Review 5: Tyler — noticing mental clarity -->
+        <article class="review-card reveal reveal--delay-4" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">Noticing a difference!</h3>
+          <p class="review-card__body">I think I am noticing a difference in mental clarity and even energy. Almost through one full bottle, and I plan to continue!</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Tyler Kallasy</span>
+              <span class="review-card__location">&#127482;&#127480; Denver, US</span>
+            </div>
+            <span class="review-card__date">Mar 26, 2026</span>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
