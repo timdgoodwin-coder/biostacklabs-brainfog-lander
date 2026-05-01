@@ -178,8 +178,6 @@
       align-items: flex-start;
       gap: var(--space-3);
       padding: var(--space-5) var(--space-5);
-      cursor: pointer;
-      user-select: none;
     }
 
     @media (min-width: 640px) {
@@ -232,49 +230,8 @@
       .listicle-item__summary { display: block; }
     }
 
-    .listicle-item__chevron {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--color-bg-elevated);
-      border: 1px solid var(--color-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform var(--transition-normal), background var(--transition-fast);
-      margin-top: 2px;
-    }
-
-    .listicle-item--open .listicle-item__chevron {
-      transform: rotate(180deg);
-      background: var(--color-accent-gold-light);
-      border-color: rgba(184,144,42,0.3);
-    }
-
-    .listicle-item__chevron svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--color-text-muted);
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: stroke var(--transition-fast);
-    }
-
-    .listicle-item--open .listicle-item__chevron svg {
-      stroke: var(--color-accent-gold);
-    }
-
     .listicle-item__body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .listicle-item--open .listicle-item__body {
-      max-height: 1200px;
+      display: block;
     }
 
     .listicle-item__content {
@@ -798,7 +755,7 @@
     <div class="container">
       <div class="nav__inner">
         <a href="#" class="nav__logo" aria-label="BioStack Labs">
-          <img src="nad-regen-hero.png" alt="BioStack Labs" style="height:36px;width:auto;object-fit:contain;">
+          <img src="biostack-logo-white.png" alt="BioStack Labs" style="height:36px;width:auto;object-fit:contain;">
         </a>
         <div class="nav__links">
           <a href="#the-problem" class="nav__link">The Problem</a>
@@ -878,7 +835,7 @@
         <div class="hero__visual">
           <div class="hero__bottle-hero">
             <div class="hero__bottle-glow" aria-hidden="true"></div>
-            <img src="nad-regen-hero.png"
+            <img src="nad-regen-bottle.png"
                  alt="NAD Regen by BioStack Labs — the most complete NAD solution on the market"
                  class="hero__bottle-img">
           </div>
@@ -952,15 +909,12 @@
       <div class="listicle__items" role="list">
 
         <!-- Item 1 -->
-        <article class="listicle-item reveal" role="listitem" aria-expanded="false" id="item-1">
-          <div class="listicle-item__header" role="button" tabindex="0" aria-controls="body-1" aria-label="Expand: Your Brain Runs on a High-Speed Energy Currency">
+        <article class="listicle-item listicle-item--open reveal" role="listitem" id="item-1">
+          <div class="listicle-item__header">
             <div class="listicle-item__number" aria-hidden="true">01</div>
             <div class="listicle-item__meta">
               <h3 class="listicle-item__title">Your Brain Runs on a High-Speed Energy Currency — and It's Running Low</h3>
               <p class="listicle-item__summary">Every thought, memory, and decision requires ATP. NAD is essential for converting food into that energy efficiently.</p>
-            </div>
-            <div class="listicle-item__chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
           </div>
           <div class="listicle-item__body" id="body-1">
@@ -984,15 +938,12 @@
         </article>
 
         <!-- Item 2 -->
-        <article class="listicle-item reveal reveal--delay-1" role="listitem" aria-expanded="false" id="item-2">
-          <div class="listicle-item__header" role="button" tabindex="0" aria-controls="body-2" aria-label="Expand: Brain Fog Is Often Mitochondrial Underperformance">
+        <article class="listicle-item listicle-item--open reveal reveal--delay-1" role="listitem" id="item-2">
+          <div class="listicle-item__header">
             <div class="listicle-item__number" aria-hidden="true">02</div>
             <div class="listicle-item__meta">
               <h3 class="listicle-item__title">Brain Fog Is Often Mitochondrial Underperformance</h3>
               <p class="listicle-item__summary">Neurons are extremely energy-demanding cells — and NAD is a core driver of mitochondrial function and electron transport.</p>
-            </div>
-            <div class="listicle-item__chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
           </div>
           <div class="listicle-item__body" id="body-2">
@@ -1014,15 +965,12 @@
         </article>
 
         <!-- Item 3 -->
-        <article class="listicle-item reveal reveal--delay-2" role="listitem" aria-expanded="false" id="item-3">
-          <div class="listicle-item__header" role="button" tabindex="0" aria-controls="body-3" aria-label="Expand: NAD Activates Your Brain's Repair and Reset Systems">
+        <article class="listicle-item listicle-item--open reveal reveal--delay-2" role="listitem" id="item-3">
+          <div class="listicle-item__header">
             <div class="listicle-item__number" aria-hidden="true">03</div>
             <div class="listicle-item__meta">
               <h3 class="listicle-item__title">NAD Activates Your Brain's Repair and Reset Systems</h3>
               <p class="listicle-item__summary">Beyond energy, NAD fuels enzymes like sirtuins and PARPs that repair DNA, reduce oxidative stress, and support neuronal resilience.</p>
-            </div>
-            <div class="listicle-item__chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
           </div>
           <div class="listicle-item__body" id="body-3">
@@ -1042,15 +990,12 @@
         </article>
 
         <!-- Item 4 -->
-        <article class="listicle-item reveal reveal--delay-3" role="listitem" aria-expanded="false" id="item-4">
-          <div class="listicle-item__header" role="button" tabindex="0" aria-controls="body-4" aria-label="Expand: Chronic Inflammation Quietly Drains Cognitive Sharpness">
+        <article class="listicle-item listicle-item--open reveal reveal--delay-3" role="listitem" id="item-4">
+          <div class="listicle-item__header">
             <div class="listicle-item__number" aria-hidden="true">04</div>
             <div class="listicle-item__meta">
               <h3 class="listicle-item__title">Chronic Inflammation Quietly Drains Cognitive Sharpness</h3>
               <p class="listicle-item__summary">Aging and stress increase inflammatory activity in the brain — and one enzyme, CD38, consumes NAD<sup>+</sup> aggressively over time.</p>
-            </div>
-            <div class="listicle-item__chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
           </div>
           <div class="listicle-item__body" id="body-4">
@@ -1072,15 +1017,12 @@
         </article>
 
         <!-- Item 5 -->
-        <article class="listicle-item reveal reveal--delay-4" role="listitem" aria-expanded="false" id="item-5">
-          <div class="listicle-item__header" role="button" tabindex="0" aria-controls="body-5" aria-label="Expand: Why NAD Restoration Is Being Studied for Cognitive Decline">
+        <article class="listicle-item listicle-item--open reveal reveal--delay-4" role="listitem" id="item-5">
+          <div class="listicle-item__header">
             <div class="listicle-item__number" aria-hidden="true">05</div>
             <div class="listicle-item__meta">
               <h3 class="listicle-item__title">Why NAD Restoration Is Being Studied for Cognitive Decline</h3>
               <p class="listicle-item__summary">Research has increasingly linked NAD metabolism to brain aging, memory, and neurodegenerative resilience.</p>
-            </div>
-            <div class="listicle-item__chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
           </div>
           <div class="listicle-item__body" id="body-5">
@@ -1387,37 +1329,7 @@
 
     revealEls.forEach(el => observer.observe(el));
 
-    // ── Listicle accordion ──
-    document.querySelectorAll('.listicle-item__header').forEach(header => {
-      function toggle() {
-        const item = header.closest('.listicle-item');
-        const isOpen = item.classList.contains('listicle-item--open');
-        // Close all
-        document.querySelectorAll('.listicle-item--open').forEach(el => {
-          el.classList.remove('listicle-item--open');
-          el.setAttribute('aria-expanded', 'false');
-        });
-        // Open clicked if it was closed
-        if (!isOpen) {
-          item.classList.add('listicle-item--open');
-          item.setAttribute('aria-expanded', 'true');
-        }
-      }
-      header.addEventListener('click', toggle);
-      header.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggle();
-        }
-      });
-    });
-
-    // Open first item by default
-    const firstItem = document.querySelector('.listicle-item');
-    if (firstItem) {
-      firstItem.classList.add('listicle-item--open');
-      firstItem.setAttribute('aria-expanded', 'true');
-    }
+    // ── Listicle — all items always expanded ──
 
     // ── Mobile menu ──
     const menuBtn = document.getElementById('menuBtn');
