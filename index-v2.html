@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Your Brain Feels Foggy — NAD Regen | BioStack Labs</title>
+  <meta name="description" content="Bad sleep, a few drinks, a stressful week — life happens. Here's why your brain fog is real, and the simple daily habit that supports you through it.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ============================================================
+       LANDER V2 — OVERRIDES & ADDITIONS
+       ============================================================ */
+
+    /* Progress bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent-gold), #E8B84B);
+      width: 0%;
+      z-index: 200;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Hero ── */
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(184,144,42,0.12);
+      border: 1px solid rgba(184,144,42,0.3);
+      border-radius: 99px;
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent-gold);
+      margin-bottom: var(--space-4);
+    }
+
+    .hero__badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent-gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero__headline-sub {
+      display: block;
+      font-size: clamp(1rem, 4vw, 1.75rem);
+      font-weight: 400;
+      color: var(--color-text-muted-on-dark);
+      margin-top: var(--space-3);
+      letter-spacing: -0.01em;
+    }
+
+    .hero__stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+
+    .hero__stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero__stat-value {
+      font-size: clamp(1.1rem, 4vw, 1.75rem);
+      font-weight: 800;
+      color: var(--color-accent-gold);
+      letter-spacing: -0.02em;
+    }
+
+    .hero__stat-label {
+      font-size: 0.65rem;
+      color: var(--color-text-muted-on-dark);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    /* ── Intro section ── */
+    .intro {
+      background: var(--color-bg-surface);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .intro__lead {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+      max-width: 720px;
+      margin: 0 auto var(--space-8);
+      text-align: center;
+    }
+
+    .intro__lead strong {
+      color: var(--color-text-primary);
+    }
+
+    /* Reality check box */
+    .intro__reality {
+      text-align: center;
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-xl);
+      padding: var(--space-6);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .intro__reality-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+    }
+
+    .intro__reality-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .intro__reality-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-base);
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      text-align: left;
+    }
+
+    .intro__reality-item-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-accent-gold-light);
+      border: 1px solid rgba(184,144,42,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* ── Listicle section ── */
+    .listicle {
+      background: var(--color-bg-base);
+    }
+
+    .listicle__items {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .listicle-item {
+      background: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-xl);
+      overflow: hidden;
+      transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .listicle-item:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(184,144,42,0.25);
+    }
+
+    .listicle-item__header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-5);
+    }
+
+    @media (min-width: 640px) {
+      .listicle-item__header { gap: var(--space-5); padding: var(--space-8); }
+    }
+
+    .listicle-item__number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent-gold-light);
+      border: 1.5px solid rgba(184,144,42,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-xs);
+      font-weight: 800;
+      color: var(--color-accent-gold);
+      letter-spacing: -0.02em;
+    }
+
+    @media (min-width: 640px) {
+      .listicle-item__number { width: 48px; height: 48px; font-size: var(--text-sm); }
+    }
+
+    .listicle-item__meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .listicle-item__title {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 3vw, 1.25rem);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-1);
+    }
+
+    .listicle-item__summary {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      display: none;
+    }
+
+    @media (min-width: 480px) {
+      .listicle-item__summary { display: block; }
+    }
+
+    .listicle-item__body {
+      display: block;
+    }
+
+    .listicle-item__content {
+      padding: var(--space-5) var(--space-5) var(--space-6);
+      border-top: 1px solid var(--color-border);
+    }
+
+    @media (min-width: 640px) {
+      .listicle-item__content {
+        padding: var(--space-6) var(--space-8) var(--space-8);
+        padding-left: calc(var(--space-8) + 48px + var(--space-5));
+      }
+    }
+
+    .listicle-item__content p {
+      font-size: var(--text-base);
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .listicle-item__content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .listicle-item__content p strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+
+    .symptom-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin: var(--space-4) 0;
+      background: var(--color-bg-elevated);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-5);
+    }
+
+    .symptom-list__item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    .symptom-list__item::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent-gold);
+    }
+
+    .listicle-item__callout {
+      background: var(--color-accent-gold-light);
+      border-left: 3px solid var(--color-accent-gold);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      padding: var(--space-4) var(--space-5);
+      margin-top: var(--space-4);
+      font-size: var(--text-sm);
+      font-style: italic;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ── No judgment strip ── */
+    .no-judgment {
+      background: var(--color-dark-section);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .no-judgment__bg-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .no-judgment__bg-glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(184,144,42,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .no-judgment__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .no-judgment__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .nj-card {
+      background: var(--color-dark-card);
+      border: 1px solid var(--color-border-dark);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-6);
+      transition: border-color var(--transition-normal), transform var(--transition-slow);
+    }
+
+    .nj-card:hover {
+      border-color: rgba(184,144,42,0.3);
+      transform: translateY(-3px);
+    }
+
+    .nj-card__icon {
+      font-size: 28px;
+      margin-bottom: var(--space-4);
+    }
+
+    .nj-card__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text-on-dark);
+      margin-bottom: var(--space-2);
+      line-height: 1.3;
+    }
+
+    .nj-card__body {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted-on-dark);
+      line-height: 1.65;
+    }
+
+    /* ── Solution section ── */
+    .solution {
+      background: var(--color-bg-surface);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .solution__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+
+    @media (min-width: 1024px) {
+      .solution__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+        align-items: start;
+      }
+    }
+
+    /* How it works steps */
+    .how-it-works {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    .hiw-step {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+    }
+
+    .hiw-step__num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-accent-gold-light);
+      border: 1.5px solid rgba(184,144,42,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-xs);
+      font-weight: 800;
+      color: var(--color-accent-gold);
+    }
+
+    .hiw-step__text {
+      flex: 1;
+      padding-top: 6px;
+    }
+
+    .hiw-step__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-1);
+    }
+
+    .hiw-step__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* Product highlight card */
+    .product-highlight {
+      background: var(--color-dark-card);
+      border: 1px solid rgba(184,144,42,0.3);
+      border-radius: var(--border-radius-xl);
+      padding: var(--space-5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 640px) {
+      .product-highlight { padding: var(--space-8); }
+    }
+
+    .product-highlight::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(184,144,42,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .product-highlight__eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent-gold);
+      margin-bottom: var(--space-4);
+    }
+
+    .product-highlight__name {
+      font-size: clamp(1.5rem, 5vw, 2.25rem);
+      font-weight: 800;
+      color: var(--color-text-on-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: var(--space-3);
+    }
+
+    .product-highlight__tagline {
+      font-size: var(--text-base);
+      color: var(--color-text-muted-on-dark);
+      line-height: 1.65;
+      margin-bottom: var(--space-6);
+    }
+
+    .product-highlight__stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+    }
+
+    .stack-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--color-text-on-dark);
+      line-height: 1.5;
+    }
+
+    .stack-item__dot {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-accent-gold);
+      margin-top: 5px;
+    }
+
+    .stack-item strong {
+      color: var(--color-accent-gold);
+    }
+
+    .product-highlight__timelines {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3);
+      margin-bottom: var(--space-8);
+    }
+
+    .timeline-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--color-border-dark);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-4);
+      text-align: center;
+    }
+
+    .timeline-card__value {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--color-accent-gold);
+      line-height: 1;
+      margin-bottom: var(--space-1);
+    }
+
+    .timeline-card__label {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted-on-dark);
+      line-height: 1.4;
+    }
+
+    .product-highlight__social-proof {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--color-border-dark);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-5);
+      margin-bottom: var(--space-8);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted-on-dark);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .product-highlight__social-proof strong {
+      color: var(--color-text-on-dark);
+      font-style: normal;
+    }
+
+    /* ── Social proof ── */
+    .social-proof {
+      background: var(--color-bg-surface);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .reviews-aggregate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-10);
+      flex-wrap: wrap;
+    }
+
+    .reviews-aggregate__stars {
+      display: flex;
+      gap: 3px;
+    }
+
+    .reviews-aggregate__star {
+      width: 20px;
+      height: 20px;
+      color: var(--color-accent-gold);
+    }
+
+    .reviews-aggregate__score {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--color-text-primary);
+      letter-spacing: -0.03em;
+    }
+
+    .reviews-aggregate__label {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 640px) {
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+      .reviews-grid .review-card:first-child { grid-column: span 2; }
+    }
+
+    .review-card {
+      background: var(--color-bg-base);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-xl);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: box-shadow var(--transition-normal), border-color var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .review-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(184,144,42,0.2);
+      transform: translateY(-2px);
+    }
+
+    .review-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+
+    .review-card__stars { display: flex; gap: 2px; }
+
+    .review-card__star {
+      width: 16px;
+      height: 16px;
+      color: var(--color-accent-gold);
+    }
+
+    .review-card__verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #22c55e;
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.2);
+      border-radius: 99px;
+      padding: 3px 8px;
+      white-space: nowrap;
+    }
+
+    .review-card__verified::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+
+    .review-card__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .review-card__body {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .review-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .review-card__author { display: flex; flex-direction: column; gap: 2px; }
+
+    .review-card__name {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-text-primary);
+    }
+
+    .review-card__location {
+      font-size: 11px;
+      color: var(--color-text-muted);
+    }
+
+    .review-card__date {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+
+    /* ── Final CTA ── */
+    .final-cta {
+      background: var(--color-hero-bg);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .final-cta__glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(184,144,42,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .final-cta__content { position: relative; z-index: 1; }
+
+    .final-cta__title {
+      font-size: clamp(1.75rem, 6vw, 3rem);
+      font-weight: 800;
+      color: var(--color-text-on-dark);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--space-4);
+    }
+
+    .final-cta__title em {
+      font-style: normal;
+      color: var(--color-accent-gold);
+    }
+
+    .final-cta__sub {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted-on-dark);
+      max-width: 560px;
+      margin: 0 auto var(--space-10);
+      line-height: 1.65;
+    }
+
+    .final-cta__actions {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .final-cta__note {
+      margin-top: var(--space-6);
+      font-size: var(--text-sm);
+      color: rgba(240,244,248,0.4);
+    }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      background: var(--color-hero-bg);
+      border-top: 1px solid var(--color-border-dark);
+      padding: var(--space-8) 0;
+    }
+
+    .disclaimer__text {
+      font-size: var(--text-xs);
+      color: rgba(240,244,248,0.3);
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* ── Sticky CTA ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(13,15,17,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: var(--space-3) var(--space-4);
+      padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      transform: translateY(100%);
+      transition: transform var(--transition-slow);
+    }
+
+    @media (min-width: 640px) {
+      .sticky-cta { padding: var(--space-3) var(--space-6); }
+    }
+
+    .sticky-cta--visible { transform: translateY(0); }
+
+    .sticky-cta__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted-on-dark);
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .sticky-cta__text { display: block; }
+    }
+
+    .sticky-cta__text strong { color: var(--color-text-on-dark); }
+  </style>
+</head>
+<body>
+
+  <!-- Reading progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav nav--transparent" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo" aria-label="BioStack Labs">
+          <img src="biostack-logo-white.png" alt="BioStack Labs" style="height:36px;width:auto;object-fit:contain;">
+        </a>
+        <div class="nav__links">
+          <a href="#why-it-happens" class="nav__link">Why It Happens</a>
+          <a href="#real-life" class="nav__link">Real Life</a>
+          <a href="#the-fix" class="nav__link">The Fix</a>
+        </div>
+        <a href="#the-fix" class="nav__cta">Get NAD Regen</a>
+        <button class="nav__hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-menu__close" id="menuClose" aria-label="Close menu">&#x2715;</button>
+    <nav class="mobile-menu__links">
+      <a href="#why-it-happens" class="mobile-menu__link">Why It Happens</a>
+      <a href="#real-life" class="mobile-menu__link">Real Life</a>
+      <a href="#the-fix" class="mobile-menu__link">The Fix</a>
+      <a href="#the-fix" class="btn btn--gold btn--lg" style="margin-top:var(--space-4)">Get NAD Regen</a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="top">
+    <div class="hero__bg-grain" aria-hidden="true"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero__grid">
+
+        <div class="hero__content">
+          <div class="hero__badge" aria-label="Used by thousands every day">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            Used by thousands every day
+          </div>
+
+          <h1 class="hero__headline">
+            Feel Like
+            <em>Yourself Again</em>
+            <span class="hero__headline-sub">No lifestyle overhaul required</span>
+          </h1>
+
+          <span class="hero__rule" aria-hidden="true"></span>
+
+          <p class="hero__subheadline">
+            Bad sleep, a stressful week, a few drinks on the weekend — life is full of things that cloud your thinking. NAD Regen supports your brain through it, every day, with just 2 capsules.
+          </p>
+
+          <div class="hero__actions" style="flex-direction:column;gap:var(--space-3);">
+            <a href="#why-it-happens" class="btn btn--gold btn--lg" style="justify-content:center;">
+              Why Your Brain Fogs Over
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </a>
+            <a href="#the-fix" class="btn btn--ghost-light btn--lg" style="justify-content:center;">See the Solution</a>
+          </div>
+
+          <div class="hero__stat-row">
+            <div class="hero__stat">
+              <span class="hero__stat-value">2</span>
+              <span class="hero__stat-label">Capsules a day. That's all</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value">60<small style="font-size:0.6em">days</small></span>
+              <span class="hero__stat-label">Most people notice a shift</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value">4.9<small style="font-size:0.6em">&#9733;</small></span>
+              <span class="hero__stat-label">From verified customers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__bottle-hero">
+            <div class="hero__bottle-glow" aria-hidden="true"></div>
+            <img src="nad-regen-bottle.png"
+                 alt="NAD Regen by BioStack Labs — daily support for mental clarity"
+                 class="hero__bottle-img">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PHILOSOPHY STRIP
+       ============================================================ -->
+  <div class="philosophy-strip" role="region" aria-label="Key reassurances">
+    <div class="container">
+      <div class="philosophy-strip__inner">
+        <div class="philosophy-stat">
+          <div class="philosophy-stat__number">No judgment</div>
+          <div class="philosophy-stat__label">Works with your life as it actually is</div>
+        </div>
+        <div class="philosophy-stat">
+          <div class="philosophy-stat__number">No injections</div>
+          <div class="philosophy-stat__label">Just 2 capsules. Simple and done</div>
+        </div>
+        <div class="philosophy-stat">
+          <div class="philosophy-stat__number">60-day guarantee</div>
+          <div class="philosophy-stat__label">Full refund if you don't feel it</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       INTRO — REAL LIFE FRAMING
+       ============================================================ -->
+  <section class="intro section" id="why-it-happens" aria-labelledby="intro-title">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">Let's be honest</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="intro-title">Life isn't perfect — and neither is your energy</h2>
+      </div>
+
+      <p class="intro__lead reveal reveal--delay-1">
+        You're not doing anything wrong. <strong>Brain fog is one of the most common complaints among people over 40</strong> — and it's not just about being tired or stressed. As we get older, the body naturally produces less of a key molecule that keeps our brains running smoothly. The result? That fuzzy, slow, "not quite firing on all cylinders" feeling.
+      </p>
+
+      <div class="intro__reality reveal reveal--delay-2" role="figure" aria-label="Common triggers for brain fog">
+        <div class="intro__reality-label">Sound familiar? These all make it worse</div>
+        <div class="intro__reality-list">
+          <div class="intro__reality-item">
+            <span class="intro__reality-item-icon">🍷</span>
+            A glass or two of wine most evenings
+          </div>
+          <div class="intro__reality-item">
+            <span class="intro__reality-item-icon">😴</span>
+            Sleep that's never quite good enough
+          </div>
+          <div class="intro__reality-item">
+            <span class="intro__reality-item-icon">📱</span>
+            Too much screen time, too little downtime
+          </div>
+          <div class="intro__reality-item">
+            <span class="intro__reality-item-icon">☕</span>
+            Running on caffeine to get through the day
+          </div>
+          <div class="intro__reality-item">
+            <span class="intro__reality-item-icon">😤</span>
+            Stress that never fully switches off
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align:center;margin-top:var(--space-8);max-width:680px;margin-left:auto;margin-right:auto;font-size:clamp(0.95rem,2.5vw,1.125rem);color:var(--color-text-muted);line-height:1.7;" class="reveal reveal--delay-3">
+        None of these make you a bad person. They make you human. The good news is there's now a simple daily supplement that supports your brain through all of it — no overhauling your lifestyle, no giving up the things you enjoy.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LISTICLE — 5 EVERYDAY REASONS
+       ============================================================ -->
+  <section class="listicle section" id="real-life" aria-labelledby="listicle-title">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">Why it happens</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="listicle-title">5 everyday things that drain your mental sharpness — and what's actually going on</h2>
+        <p class="section-header__subtitle">You don't need a biology degree to understand this</p>
+      </div>
+
+      <div class="listicle__items" role="list">
+
+        <!-- Item 1 -->
+        <article class="listicle-item listicle-item--open reveal" role="listitem" id="item-1">
+          <div class="listicle-item__header">
+            <div class="listicle-item__number" aria-hidden="true">01</div>
+            <div class="listicle-item__meta">
+              <h3 class="listicle-item__title">Getting older quietly depletes your brain's fuel supply</h3>
+              <p class="listicle-item__summary">From your mid-30s onwards, your body naturally produces less of the molecule your brain needs to generate energy. Most people don't notice it until it's been going on for years.</p>
+            </div>
+          </div>
+          <div class="listicle-item__body" id="body-1">
+            <div class="listicle-item__content">
+              <p>Think of your brain like a car engine. It needs fuel to run properly — and there's a molecule in your body (called NAD) that acts a bit like that fuel. The catch is that <strong>your body produces less and less of it every year from your mid-30s onwards.</strong></p>
+
+              <p>By the time most people hit 50, they have roughly half the NAD levels they had in their 20s. The brain is one of the biggest consumers of this fuel — so when it starts running low, you feel it.</p>
+
+              <div class="symptom-list" role="list" aria-label="How low NAD feels">
+                <div class="symptom-list__item" role="listitem">Your thinking feels slower than it used to</div>
+                <div class="symptom-list__item" role="listitem">You forget words, names, or what you walked into a room for</div>
+                <div class="symptom-list__item" role="listitem">Concentration takes more effort than it should</div>
+                <div class="symptom-list__item" role="listitem">That "foggy" feeling that never quite clears</div>
+              </div>
+
+              <div class="listicle-item__callout">
+                This isn't you "losing it" or getting old before your time. It's a fuel supply issue — and it can be supported.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="listicle-item listicle-item--open reveal reveal--delay-1" role="listitem" id="item-2">
+          <div class="listicle-item__header">
+            <div class="listicle-item__number" aria-hidden="true">02</div>
+            <div class="listicle-item__meta">
+              <h3 class="listicle-item__title">Alcohol is harder on your brain energy than you'd think</h3>
+              <p class="listicle-item__summary">Even moderate drinking — a couple of glasses in the evening — disrupts the very process your brain relies on to recover and restore its energy overnight.</p>
+            </div>
+          </div>
+          <div class="listicle-item__body" id="body-2">
+            <div class="listicle-item__content">
+              <p>Nobody's saying you have to stop drinking. But it's worth understanding what actually happens. When your body processes alcohol, it puts enormous strain on the same systems your brain uses to repair and recharge — essentially <strong>putting a big dent in your NAD levels</strong> while you sleep.</p>
+
+              <p>The next-day fogginess you write off as "just a bit tired" is often your brain struggling to generate enough energy after a night of playing catch-up.</p>
+
+              <div class="symptom-list" role="list" aria-label="The morning-after effect">
+                <div class="symptom-list__item" role="listitem">Waking up unrefreshed even after a full night</div>
+                <div class="symptom-list__item" role="listitem">That cloudy head in the morning that coffee barely touches</div>
+                <div class="symptom-list__item" role="listitem">Mood that takes hours to lift</div>
+              </div>
+
+              <div class="listicle-item__callout">
+                NAD Regen doesn't replace good habits — but it does help replenish what your body depletes, so the recovery is faster and the fog lifts sooner.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="listicle-item listicle-item--open reveal reveal--delay-2" role="listitem" id="item-3">
+          <div class="listicle-item__header">
+            <div class="listicle-item__number" aria-hidden="true">03</div>
+            <div class="listicle-item__meta">
+              <h3 class="listicle-item__title">Poor sleep doesn't just leave you tired — it stops your brain cleaning itself</h3>
+              <p class="listicle-item__summary">Sleep is when your brain does its housekeeping — clearing out waste, restoring energy, and resetting for the next day. Without quality sleep, that process doesn't happen properly.</p>
+            </div>
+          </div>
+          <div class="listicle-item__body" id="body-3">
+            <div class="listicle-item__content">
+              <p>You probably know poor sleep makes you tired. What's less well known is that <strong>your brain uses the night to literally flush out waste products</strong> that build up during the day. This is when it resets and restores its energy stores.</p>
+
+              <p>When sleep is broken, too short, or shallow — whether from stress, kids, work, or just lying awake — that cleanup process is interrupted. You wake up and the slate hasn't been wiped clean.</p>
+
+              <div class="symptom-list" role="list" aria-label="Signs your brain's cleanup was disrupted">
+                <div class="symptom-list__item" role="listitem">Heavy-headed mornings regardless of hours slept</div>
+                <div class="symptom-list__item" role="listitem">Relying on caffeine just to feel baseline normal</div>
+                <div class="symptom-list__item" role="listitem">Mental fatigue that builds through the week</div>
+              </div>
+
+              <div class="listicle-item__callout">
+                Supporting your NAD levels daily means giving your brain better raw material to work with — even on the mornings after the nights that weren't great.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="listicle-item listicle-item--open reveal reveal--delay-3" role="listitem" id="item-4">
+          <div class="listicle-item__header">
+            <div class="listicle-item__number" aria-hidden="true">04</div>
+            <div class="listicle-item__meta">
+              <h3 class="listicle-item__title">Chronic stress quietly burns through your mental reserves</h3>
+              <p class="listicle-item__summary">When your body is in stress mode — even low-level, background stress — it pulls resources away from thinking clearly and towards just getting through. Over time, that depletes the fuel that keeps you sharp.</p>
+            </div>
+          </div>
+          <div class="listicle-item__body" id="body-4">
+            <div class="listicle-item__content">
+              <p>Modern stress is rarely short and sharp — it's long, grinding, and never fully off. Work pressures, family demands, financial worries, the endless news cycle. Your body treats all of it as an energy emergency, which means <strong>it burns through its reserves trying to keep you functional</strong>.</p>
+
+              <p>The brain is the biggest casualty. You find yourself:</p>
+              <div class="symptom-list" role="list" aria-label="Signs of stress-depleted mental reserves">
+                <div class="symptom-list__item" role="listitem">Struggling to hold multiple things in your head at once</div>
+                <div class="symptom-list__item" role="listitem">Making small mistakes you wouldn't usually make</div>
+                <div class="symptom-list__item" role="listitem">Feeling mentally exhausted long before the day is done</div>
+                <div class="symptom-list__item" role="listitem">Brain fog that's worst on your most stressful days</div>
+              </div>
+
+              <div class="listicle-item__callout">
+                You can't always reduce the stress. But you can support the brain's ability to handle it — and that starts at the cellular level.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5 -->
+        <article class="listicle-item listicle-item--open reveal reveal--delay-4" role="listitem" id="item-5">
+          <div class="listicle-item__header">
+            <div class="listicle-item__number" aria-hidden="true">05</div>
+            <div class="listicle-item__meta">
+              <h3 class="listicle-item__title">It compounds — and most people only notice once it's been going on for years</h3>
+              <p class="listicle-item__summary">Brain fog isn't usually dramatic. It's gradual. Each of these things layers on top of the other, and one day you realise you haven't felt truly sharp for a very long time.</p>
+            </div>
+          </div>
+          <div class="listicle-item__body" id="body-5">
+            <div class="listicle-item__content">
+              <p>The tricky thing about brain fog is how quietly it sneaks up on you. There's no single bad day where it starts. It's more like a dial that slowly turns down over a few years, until you realise <strong>you can't remember the last time your head felt completely clear</strong>.</p>
+
+              <p>By the time most people take action, it's already been building for years. The good news is that the body is remarkably responsive when you give it the right support — and it's never too late to start.</p>
+
+              <div class="listicle-item__callout">
+                Thousands of people who've been living with brain fog for years have found that consistent daily support with NAD Regen makes a noticeable difference — not overnight, but steadily and unmistakably. The most common thing people say? "I didn't realise how foggy I'd been until the fog started lifting."
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NO JUDGMENT STRIP
+       ============================================================ -->
+  <section class="no-judgment section" id="real-life-strip" aria-labelledby="nj-title">
+    <div class="no-judgment__bg-dots" aria-hidden="true"></div>
+    <div class="no-judgment__bg-glow" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:1;">
+
+      <div class="section-header section-header--center section-header--dark reveal">
+        <span class="section-header__eyebrow">No lifestyle overhaul required</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="nj-title">NAD Regen works with your life, not against it</h2>
+        <p class="section-header__subtitle">You don't have to become a different person to feel better</p>
+      </div>
+
+      <div class="no-judgment__grid reveal reveal--delay-1">
+
+        <div class="nj-card">
+          <div class="nj-card__icon">🍷</div>
+          <div class="nj-card__title">You still enjoy a drink</div>
+          <div class="nj-card__body">NAD Regen helps replenish what alcohol depletes. You don't have to stop — you just get better support for the recovery.</div>
+        </div>
+
+        <div class="nj-card">
+          <div class="nj-card__icon">😴</div>
+          <div class="nj-card__title">Your sleep isn't perfect</div>
+          <div class="nj-card__body">NAD Regen gives your brain better resources to work with even when the night wasn't ideal. Every morning is a better start.</div>
+        </div>
+
+        <div class="nj-card">
+          <div class="nj-card__icon">😤</div>
+          <div class="nj-card__title">Life is stressful</div>
+          <div class="nj-card__body">You can't always remove the pressure — but you can support your brain's ability to handle it. That's what this does.</div>
+        </div>
+
+        <div class="nj-card">
+          <div class="nj-card__icon">☕</div>
+          <div class="nj-card__title">You're not a morning person</div>
+          <div class="nj-card__body">2 capsules with breakfast. Takes 3 seconds. No prep, no ritual, no complicated routine. Just a daily habit that quietly works.</div>
+        </div>
+
+        <div class="nj-card">
+          <div class="nj-card__icon">🎂</div>
+          <div class="nj-card__title">You're over 40 (or 50, or 60)</div>
+          <div class="nj-card__body">This is specifically designed for where you're at. The older you are, the lower your NAD levels — and the more noticeable the difference when you restore them.</div>
+        </div>
+
+        <div class="nj-card">
+          <div class="nj-card__icon">🤷</div>
+          <div class="nj-card__title">You're not a supplement person</div>
+          <div class="nj-card__body">NAD Regen isn't a lifestyle brand. It's a targeted solution to a specific problem. If you can take a vitamin, you can do this.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOLUTION SECTION
+       ============================================================ -->
+  <section class="solution section" id="the-fix" aria-labelledby="solution-title">
+    <div class="container">
+
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">The fix</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="solution-title">Here's what you actually need to do</h2>
+        <p class="section-header__subtitle">No complicated protocols. No expensive clinic visits. No injections.</p>
+      </div>
+
+      <div class="solution__grid">
+
+        <!-- How it works steps -->
+        <div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-8);line-height:1.7;">The simple version: your brain needs a molecule called NAD to work well. You have less of it than you used to. NAD Regen gives your body what it needs to restore it. Here's all you do:</p>
+
+          <div class="how-it-works reveal">
+            <div class="hiw-step">
+              <div class="hiw-step__num">1</div>
+              <div class="hiw-step__text">
+                <div class="hiw-step__title">Take 2 capsules in the morning</div>
+                <div class="hiw-step__desc">With breakfast, with water — doesn't matter. Just take them. It takes 3 seconds.</div>
+              </div>
+            </div>
+            <div class="hiw-step">
+              <div class="hiw-step__num">2</div>
+              <div class="hiw-step__text">
+                <div class="hiw-step__title">Be consistent for 60 days</div>
+                <div class="hiw-step__desc">This isn't a quick fix — it's a restoration. Your NAD levels took years to decline. Most people notice the shift between weeks 4 and 8.</div>
+              </div>
+            </div>
+            <div class="hiw-step">
+              <div class="hiw-step__num">3</div>
+              <div class="hiw-step__text">
+                <div class="hiw-step__title">Notice the difference</div>
+                <div class="hiw-step__desc">Clearer mornings. Easier concentration. Fewer "why did I walk in here?" moments. People often describe it as their old self coming back.</div>
+              </div>
+            </div>
+            <div class="hiw-step">
+              <div class="hiw-step__num">4</div>
+              <div class="hiw-step__text">
+                <div class="hiw-step__title">Keep living your life</div>
+                <div class="hiw-step__desc">You don't have to change anything else. The odd drink, the imperfect sleep, the stressful weeks — NAD Regen supports you through all of it.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:var(--space-8);padding:var(--space-5);background:var(--color-bg-elevated);border:1px solid var(--color-border);border-radius:var(--border-radius-lg);" class="reveal reveal--delay-1">
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin:0;">
+              <strong style="color:var(--color-text-primary);">Why not just get more sleep and drink less?</strong> Good question. Those things help — but they don't address the underlying decline in NAD production that comes with age. Even people with perfect habits see their NAD levels drop. This is what fills that gap.
+            </p>
+          </div>
+        </div>
+
+        <!-- Product highlight -->
+        <div class="product-highlight reveal reveal--delay-2" role="region" aria-label="NAD Regen product details">
+          <div class="product-highlight__eyebrow">The most complete NAD solution</div>
+          <h3 class="product-highlight__name">NAD Regen</h3>
+          <p class="product-highlight__tagline">Four powerful ingredients, one simple capsule. Designed specifically for brain fog and healthy aging.</p>
+
+          <div class="product-highlight__stack" role="list" aria-label="What's inside NAD Regen">
+            <div class="stack-item" role="listitem">
+              <span class="stack-item__dot" aria-hidden="true"></span>
+              <span><strong>NAD3&#8482;</strong> — the licensed ingredient that tackles the root cause of NAD decline. Nothing else on the market compares.</span>
+            </div>
+            <div class="stack-item" role="listitem">
+              <span class="stack-item__dot" aria-hidden="true"></span>
+              <span><strong>Spermidine</strong> — helps your cells renew and clean themselves out. Think of it as a cellular reset.</span>
+            </div>
+            <div class="stack-item" role="listitem">
+              <span class="stack-item__dot" aria-hidden="true"></span>
+              <span><strong>Resveratrol</strong> — activates pathways that protect your cells. Found naturally in red wine, but in doses that actually work.</span>
+            </div>
+            <div class="stack-item" role="listitem">
+              <span class="stack-item__dot" aria-hidden="true"></span>
+              <span><strong>Niacinamide</strong> — a direct building block that helps your body make more NAD. Backs everything else up.</span>
+            </div>
+          </div>
+
+          <div class="product-highlight__timelines" role="list" aria-label="When you'll feel it">
+            <div class="timeline-card" role="listitem">
+              <div class="timeline-card__value">~4–8</div>
+              <div class="timeline-card__label">weeks when most people start noticing a difference</div>
+            </div>
+            <div class="timeline-card" role="listitem">
+              <div class="timeline-card__value">60 days</div>
+              <div class="timeline-card__label">money-back guarantee if you don't feel it</div>
+            </div>
+          </div>
+
+          <div class="product-highlight__social-proof">
+            <strong>"I didn't think it was doing anything — then I stopped taking it for two weeks and immediately noticed."</strong> That's the most common thing people say. The effect is real, and subtle enough that you don't always notice it until it's gone.
+          </div>
+
+          <a href="#" class="btn btn--gold" style="width:100%;justify-content:center;" aria-label="Get NAD Regen — start supporting your brain today">
+            Get NAD Regen — Start Today
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOCIAL PROOF
+       ============================================================ -->
+  <section class="social-proof section" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">Real results</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="reviews-title">From people who were sceptical too</h2>
+        <p class="section-header__subtitle">These aren't fitness influencers. They're people with normal lives who got their sharpness back.</p>
+      </div>
+
+      <!-- Aggregate rating -->
+      <div class="reviews-aggregate reveal reveal--delay-1" aria-label="Overall customer rating">
+        <div class="reviews-aggregate__stars" aria-label="5 stars">
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span class="reviews-aggregate__score">4.9</span>
+        <span class="reviews-aggregate__label">from verified purchasers</span>
+      </div>
+
+      <!-- Review cards -->
+      <div class="reviews-grid" role="list" aria-label="Customer reviews">
+
+        <article class="review-card reveal" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">The brain fog is gone and I can remember what I read now</h3>
+          <p class="review-card__body">Been using NAD Regen for 2 years now, it took about 4 months to start working but when it did I truly felt it. The brain fog is gone and I can remember what I read now. Highly recommend — stick with it for a couple of months to see results.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Sylridx</span>
+              <span class="review-card__location">&#127482;&#127480; Webster, US</span>
+            </div>
+            <span class="review-card__date">Feb 12, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-1" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+          <h3 class="review-card__title">No more 3pm energy crash</h3>
+          <p class="review-card__body">I have been taking NAD Regen for approximately 7 months now. This addition has skyrocketed my energy levels both mentally and physically. I no longer get the 3pm lack of energy like I used to. The brain fog also lifted very quickly in my case. I&#8217;m 67 years of age and still feel sharp.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Frank S.</span>
+              <span class="review-card__location">&#127482;&#127480; Daytona Beach, US</span>
+            </div>
+            <span class="review-card__date">Feb 15, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-2" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">Don't need energy drinks anymore</h3>
+          <p class="review-card__body">It has been nine months to the day since I started. I am 35 and have been on a journey to find the right supplements. Slowly and quietly I didn&#8217;t need energy drinks anymore and even rarely do I need coffee in the mornings. It took time but the effects are real.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Dana</span>
+              <span class="review-card__location">&#127482;&#127480; Crestwood, US</span>
+            </div>
+            <span class="review-card__date">Feb 13, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-3" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">I can tell a difference every day I take it</h3>
+          <p class="review-card__body">NAD Regen is amazing. I wasn&#8217;t expecting too much when I first tried it. I&#8217;ve been taking supplements for years to get a bit more out of everyday life. I can genuinely tell a difference when I take this — not a jittery boost, just clearer and more on it.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Smokey</span>
+              <span class="review-card__location">&#127482;&#127480; Richardson, US</span>
+            </div>
+            <span class="review-card__date">Mar 8, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-4" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">Noticing a difference — going to keep going</h3>
+          <p class="review-card__body">I think I am noticing a difference in mental clarity and even energy. Almost through one full bottle, and I plan to continue! It's the kind of improvement that sneaks up on you — one morning you just realise your head feels clearer than it did.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Tyler Kallasy</span>
+              <span class="review-card__location">&#127482;&#127480; Denver, US</span>
+            </div>
+            <span class="review-card__date">Mar 26, 2026</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+       ============================================================ -->
+  <section class="final-cta section" aria-labelledby="cta-title">
+    <div class="final-cta__glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="final-cta__content">
+        <div class="section-header section-header--center section-header--dark reveal" style="margin-bottom:0">
+          <span class="section-header__eyebrow">Start today</span>
+        </div>
+        <h2 class="final-cta__title reveal reveal--delay-1" id="cta-title">
+          Feel like<br><em>yourself again</em>
+        </h2>
+        <p class="final-cta__sub reveal reveal--delay-2">
+          You don't have to overhaul your life. You just have to start. 2 capsules a day, and your brain gets the support it's been missing.
+        </p>
+        <div class="final-cta__actions reveal reveal--delay-3">
+          <a href="#" class="btn btn--gold btn--lg" aria-label="Shop NAD Regen now">
+            Shop NAD Regen Now
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#why-it-happens" class="btn btn--ghost-light btn--lg">Read from the top</a>
+        </div>
+        <p class="final-cta__note reveal reveal--delay-4">Free shipping on orders over $75 &bull; 60-day money back guarantee &bull; No lifestyle changes required</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="nad-regen-hero.png" alt="BioStack Labs" style="height:28px;width:auto;filter:brightness(0) invert(1);margin-bottom:var(--space-4);">
+          <p class="footer__tagline">Science-backed cellular nutrition for peak human performance.</p>
+        </div>
+        <div class="footer__nav-group">
+          <div>
+            <div class="footer__nav-title">Product</div>
+            <ul class="footer__nav-links">
+              <li><a href="#" class="footer__nav-link">NAD Regen</a></li>
+              <li><a href="#" class="footer__nav-link">All Products</a></li>
+              <li><a href="#" class="footer__nav-link">The Science</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__nav-title">Company</div>
+            <ul class="footer__nav-links">
+              <li><a href="#" class="footer__nav-link">About BioStack</a></li>
+              <li><a href="#" class="footer__nav-link">Research</a></li>
+              <li><a href="#" class="footer__nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__nav-title">Support</div>
+            <ul class="footer__nav-links">
+              <li><a href="#" class="footer__nav-link">FAQ</a></li>
+              <li><a href="#" class="footer__nav-link">Shipping</a></li>
+              <li><a href="#" class="footer__nav-link">Returns</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 BioStack Labs. All rights reserved.</span>
+        <div class="footer__legal-links">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+          <a href="#" class="footer__legal-link">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer" role="note" aria-label="Legal disclaimer">
+    <div class="container">
+      <p class="disclaimer__text">
+        * These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. The information on this page is for educational purposes only and is not a substitute for professional medical advice. Always consult your physician before starting any new supplement regimen.
+      </p>
+    </div>
+  </div>
+
+  <!-- Sticky CTA bar -->
+  <div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Quick purchase CTA">
+    <p class="sticky-cta__text"><strong>NAD Regen</strong> — 2 capsules a day. Feel like yourself again.</p>
+    <a href="#" class="btn btn--gold" style="white-space:nowrap" aria-label="Shop NAD Regen now">Shop Now</a>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // ── Scroll-driven nav state ──
+    const nav = document.getElementById('mainNav');
+    const progressBar = document.getElementById('progressBar');
+    const stickyCta = document.getElementById('stickyCta');
+
+    function onScroll() {
+      const scrolled = window.scrollY;
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = total > 0 ? (scrolled / total) * 100 : 0;
+
+      progressBar.style.width = pct + '%';
+
+      if (scrolled > 60) {
+        nav.classList.add('nav--scrolled');
+        nav.classList.remove('nav--transparent');
+      } else {
+        nav.classList.remove('nav--scrolled');
+        nav.classList.add('nav--transparent');
+      }
+
+      if (scrolled > 600) {
+        stickyCta.classList.add('sticky-cta--visible');
+      } else {
+        stickyCta.classList.remove('sticky-cta--visible');
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Reveal on scroll ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── Mobile menu ──
+    const menuBtn = document.getElementById('menuBtn');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function openMenu() {
+      mobileMenu.classList.add('mobile-menu--open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('mobile-menu--open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('modal-open');
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    mobileMenu.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  </script>
+
+</body>
+</html>
