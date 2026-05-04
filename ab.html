@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <title>BioStack Labs — NAD Regen</title>
+  <script>
+    (function () {
+      var COOKIE = 'biostack_ab';
+      var PAGES  = ['index.html', 'index-v2.html'];
+
+      function getCookie(name) {
+        var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+        return match ? decodeURIComponent(match[1]) : null;
+      }
+
+      function setCookie(name, value, days) {
+        var expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax';
+      }
+
+      var assigned = getCookie(COOKIE);
+      if (!assigned || PAGES.indexOf(assigned) === -1) {
+        assigned = PAGES[Math.random() < 0.5 ? 0 : 1];
+        setCookie(COOKIE, assigned, 90);
+      }
+
+      window.location.replace(assigned);
+    })();
+  </script>
+</head>
+<body>
+  <!-- Redirecting… -->
+</body>
+</html>
