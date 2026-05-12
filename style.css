@@ -345,6 +345,7 @@ button {
 .hero__bg-grain {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   opacity: 0.4;
   pointer-events: none;
@@ -354,6 +355,7 @@ button {
   position: absolute;
   top: -20%;
   right: -10%;
+  z-index: 1;
   width: 700px;
   height: 700px;
   background: radial-gradient(ellipse, rgba(184,144,42,0.06) 0%, transparent 65%);
@@ -368,6 +370,8 @@ button {
   width: 100%;
   padding-top: var(--nav-height);
   min-height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 1024px) {
@@ -417,6 +421,7 @@ button {
   letter-spacing: -0.025em;
   color: var(--color-text-on-dark);
   margin-bottom: var(--space-6);
+  text-shadow: 0 2px 20px rgba(13,15,17,0.8), 0 0 40px rgba(13,15,17,0.5);
 }
 
 .hero__headline em {
@@ -464,86 +469,88 @@ button {
   }
 }
 
-/* ---- Bottle image hero ---- */
-.hero__bottle-hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-/* Ambient gold glow behind the bottle */
-.hero__bottle-glow {
+/* ---- Neural background layer ---- */
+.hero__bg-neural {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(ellipse at center,
-    rgba(184, 144, 42, 0.2) 0%,
-    rgba(184, 144, 42, 0.07) 40%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  pointer-events: none;
+  inset: 0;
   z-index: 0;
-  animation: glowPulse 4s ease-in-out infinite;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.hero__bottle-img {
-  position: relative;
-  z-index: 1;
-  /* Mobile-first: smaller bottle */
-  width: 200px;
-  max-width: 65vw;
-  filter:
-    drop-shadow(0 20px 40px rgba(0,0,0,0.8))
-    drop-shadow(0 0 30px rgba(184,144,42,0.2));
-  animation: bottleFloat 6s ease-in-out infinite;
-  transform-origin: center bottom;
+.hero__bg-neural-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.38;
+  filter: blur(3px) saturate(0.6);
+  transform: scale(1.08);
+  animation: neuralDrift 20s ease-in-out infinite;
 }
 
-@media (min-width: 480px) {
-  .hero__bottle-img { width: 240px; }
+@keyframes neuralDrift {
+  0%, 100% { transform: scale(1.08) translate(0, 0); }
+  33%      { transform: scale(1.10) translate(-1%, 0.5%); }
+  66%      { transform: scale(1.06) translate(0.5%, -0.5%); }
 }
 
-@media (min-width: 768px) {
-  .hero__bottle-img { width: 300px; }
-}
-
-@media (min-width: 1024px) {
-  .hero__bottle-img {
-    width: 340px;
-    max-width: 90%;
-    filter:
-      drop-shadow(0 40px 80px rgba(0,0,0,0.8))
-      drop-shadow(0 0 60px rgba(184,144,42,0.2));
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero__bottle-img { width: 400px; }
-}
-
-@media (min-width: 1440px) {
-  .hero__bottle-img { width: 460px; }
-}
-
-@keyframes bottleFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33%       { transform: translateY(-16px) rotate(0.5deg); }
-  66%       { transform: translateY(-7px) rotate(-0.3deg); }
-}
-
-@keyframes glowPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.7; transform: scale(0.92); }
+/* Subtle edge-only vignette — keeps centre bright, darkens perimeter */
+.hero__bg-neural::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(13,15,17,0.65) 100%);
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__bottle-img,
-  .hero__bottle-glow {
+  .hero__bg-neural-img {
     animation: none;
   }
+}
+
+/* ---- Centered hero grid (single-column) ---- */
+.hero__grid--centered {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .hero__grid--centered {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero__content--centered {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__content--centered .hero__subheadline {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.hero__content--centered .hero__rule {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__content--centered .hero__stat-row {
+  justify-items: center;
+}
+
+.hero__content--centered .hero__actions {
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
 }
 
 /* ============================================================
