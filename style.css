@@ -189,6 +189,7 @@ button {
   left: 0;
   right: 0;
   height: var(--nav-height);
+  padding-top: var(--space-3);
   z-index: 100;
   transition: background var(--transition-normal), box-shadow var(--transition-normal);
 }
