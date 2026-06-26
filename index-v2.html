@@ -330,6 +330,38 @@
       font-style: italic;
       color: var(--color-text-secondary);
       line-height: 1.65;
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+    }
+
+    .listicle-item__callout-text {
+      flex: 1;
+    }
+
+    .listicle-item__callout-img {
+      flex-shrink: 0;
+      width: 110px;
+      margin-top: -24px;
+      margin-bottom: -8px;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.18));
+      transition: transform 0.35s ease;
+    }
+
+    .listicle-item__callout-img:hover {
+      transform: scale(1.05) translateY(-4px);
+    }
+
+    @media (max-width: 480px) {
+      .listicle-item__callout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .listicle-item__callout-img {
+        width: 80px;
+        margin-top: 0;
+        align-self: flex-end;
+      }
     }
 
     /* ── No judgment strip ── */
@@ -1128,7 +1160,8 @@
               <p>By the time most people take action, it's already been building for years. The good news is that the body is remarkably responsive when you give it the right support, and it's never too late to start.</p>
 
               <div class="listicle-item__callout">
-                Thousands of people who've been living with brain fog for years have found that consistent daily support with NAD Regen makes a noticeable difference. Not overnight, but steadily and unmistakably. The most common thing people say? "I didn't realise how foggy I'd been until the fog started lifting."
+                <span class="listicle-item__callout-text">Thousands of people who've been living with brain fog for years have found that consistent daily support with NAD Regen makes a noticeable difference. Not overnight, but steadily and unmistakably. The most common thing people say? &ldquo;I didn't realise how foggy I'd been until the fog started lifting.&rdquo;</span>
+                <img src="nad-regen-bottle.png" alt="NAD Regen bottle" class="listicle-item__callout-img" loading="lazy" />
               </div>
             </div>
           </div>
