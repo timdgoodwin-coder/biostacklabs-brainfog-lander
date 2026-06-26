@@ -442,11 +442,32 @@
       border-top: 1px solid var(--color-border);
     }
 
+    .solution__product-image {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: var(--space-10) 0 var(--space-12);
+    }
+
+    .solution__product-img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      filter: drop-shadow(0 24px 48px rgba(0,0,0,0.22));
+      animation: productFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes productFloat {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-10px); }
+    }
+
     .solution__grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--space-12);
     }
+
 
     @media (min-width: 1024px) {
       .solution__grid {
@@ -1183,6 +1204,10 @@
         <span class="section-rule" aria-hidden="true"></span>
         <h2 class="section-header__title" id="solution-title">Here's what you actually need to do</h2>
         <p class="section-header__subtitle">No complicated protocols. No expensive clinic visits. No injections.</p>
+      </div>
+
+      <div class="solution__product-image reveal">
+        <img src="nad-regen-bottle.png" alt="NAD Regen supplement bottle" class="solution__product-img" />
       </div>
 
       <div class="solution__grid">
