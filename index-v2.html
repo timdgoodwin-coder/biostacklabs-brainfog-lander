@@ -648,7 +648,106 @@
     /* ── Social proof ── */
     .social-proof {
       background: var(--color-bg-surface);
-      border-top: 1px solid var(--color-border);
+      border-top: none;
+    }
+
+    /* ── Social Proof Hero Banner ─────────────────────────── */
+    .social-proof__hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      margin: 0 calc(-1 * var(--space-5, 20px));
+      padding: var(--space-16, 80px) var(--space-5, 20px);
+    }
+
+    .social-proof__hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Mobile: anchor horizontally to bottle, vertically to bottom so bottle base stays in frame */
+      object-position: 70% 70%;
+      z-index: 0;
+    }
+
+    .social-proof__hero-overlay {
+      position: absolute;
+      inset: 0;
+      /* Dark gradient heavier on left for text contrast */
+      background: linear-gradient(
+        105deg,
+        rgba(10, 10, 15, 0.88) 0%,
+        rgba(10, 10, 15, 0.72) 50%,
+        rgba(10, 10, 15, 0.30) 100%
+      );
+      z-index: 1;
+    }
+
+    .social-proof__hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Override text colours inside the hero for legibility on dark bg */
+    .social-proof__hero .section-header__eyebrow {
+      color: var(--color-accent-gold, #d4a55a);
+    }
+    .social-proof__hero .section-rule {
+      background: rgba(255,255,255,0.20);
+    }
+    .social-proof__hero .section-header__title,
+    .social-proof__hero .section-header__subtitle {
+      color: #ffffff;
+    }
+    .social-proof__hero .reviews-aggregate__score {
+      color: #ffffff;
+    }
+    .social-proof__hero .reviews-aggregate__label {
+      color: rgba(255,255,255,0.70);
+    }
+    .social-proof__hero .reviews-aggregate {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      .social-proof__hero {
+        padding: var(--space-24, 120px) var(--space-8, 40px);
+        margin: 0 calc(-1 * var(--space-8, 40px));
+      }
+      .social-proof__hero-img {
+        /* Desktop: pull back slightly and anchor lower so bottle base isn't clipped */
+        object-position: 85% 68%;
+      }
+      .social-proof__hero-overlay {
+        background: linear-gradient(
+          100deg,
+          rgba(10, 10, 15, 0.85) 0%,
+          rgba(10, 10, 15, 0.60) 45%,
+          rgba(10, 10, 15, 0.10) 100%
+        );
+      }
+      .social-proof__hero-content {
+        text-align: left;
+        margin: 0;
+      }
+      .social-proof__hero .section-header--center {
+        align-items: flex-start;
+        text-align: left;
+      }
+      .social-proof__hero .reviews-aggregate {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .social-proof__hero {
+        margin: 0 calc(-1 * ((100vw - var(--container-max, 1200px)) / 2 + var(--space-8, 40px)));
+        padding: var(--space-24, 140px) calc((100vw - var(--container-max, 1200px)) / 2 + var(--space-8, 40px));
+      }
     }
 
     .reviews-aggregate {
@@ -1309,25 +1408,43 @@
        ============================================================ -->
   <section class="social-proof section" aria-labelledby="reviews-title">
     <div class="container">
-      <div class="section-header section-header--center reveal">
-        <span class="section-header__eyebrow">Real results</span>
-        <span class="section-rule" aria-hidden="true"></span>
-        <h2 class="section-header__title" id="reviews-title">From people who were sceptical too</h2>
-        <p class="section-header__subtitle">These aren't fitness influencers. They're people with normal lives who got their sharpness back.</p>
-      </div>
 
-      <!-- Aggregate rating -->
-      <div class="reviews-aggregate reveal reveal--delay-1" aria-label="Overall customer rating">
-        <div class="reviews-aggregate__stars" aria-label="5 stars">
-          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <span class="reviews-aggregate__score">4.9</span>
-        <span class="reviews-aggregate__label">from verified purchasers</span>
-      </div>
+      <!-- ── Hero Banner ───────────────────────────────────── -->
+      <div class="social-proof__hero">
+        <img
+          src="NADRegenOnTable.png"
+          alt="NAD Regen bottle resting on a rustic wooden table"
+          class="social-proof__hero-img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="social-proof__hero-overlay" aria-hidden="true"></div>
+
+        <div class="social-proof__hero-content">
+          <div class="section-header section-header--center reveal">
+            <span class="section-header__eyebrow">Real results</span>
+            <span class="section-rule" aria-hidden="true"></span>
+            <h2 class="section-header__title" id="reviews-title">From people who were sceptical too</h2>
+            <p class="section-header__subtitle">These aren't fitness influencers. They're people with normal lives who got their sharpness back.</p>
+          </div>
+
+          <!-- Aggregate rating -->
+          <div class="reviews-aggregate reveal reveal--delay-1" aria-label="Overall customer rating">
+            <div class="reviews-aggregate__stars" aria-label="5 stars">
+              <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="reviews-aggregate__score">4.9</span>
+            <span class="reviews-aggregate__label">from verified purchasers</span>
+          </div>
+        </div><!-- /hero-content -->
+      </div><!-- /social-proof__hero -->
+
+      <!-- Review cards below the banner -->
+      <div style="height: var(--space-10, 40px);"></div>
 
       <!-- Review cards -->
       <div class="reviews-grid" role="list" aria-label="Customer reviews">
