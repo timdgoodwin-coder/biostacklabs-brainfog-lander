@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Feel Like The Sharpest Person In The Room Again — NAD Regen | BioStack Labs</title>
+  <meta name="description" content="You built your reputation on thinking clearly. Discover why your brain naturally loses cellular energy after 40 and how supporting that process may help you feel mentally sharper again.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2676399889319515');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2676399889319515&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    /* ============================================================
+       HP-V1 DESIGN SYSTEM — WARM, EDITORIAL (extends v3 tokens)
+       ============================================================ */
+
+    :root {
+      /* Warm palette */
+      --color-bg: #F7F3EF;
+      --color-bg-alt: #FBF8F4;
+      --color-bg-card: #FFFFFF;
+      --color-bg-warm: #F0EAE2;
+      --color-bg-hero: #1E2A32;
+
+      /* Typography colours */
+      --color-ink: #2A2321;
+      --color-ink-secondary: #4A4241;
+      --color-ink-muted: #7A706C;
+      --color-ink-faint: #A89E9A;
+      --color-ink-on-dark: #F7F3EF;
+      --color-ink-muted-on-dark: #B8ADA8;
+
+      /* Accents */
+      --color-blue: #5B7B8A;
+      --color-blue-light: rgba(91, 123, 138, 0.1);
+      --color-blue-mid: rgba(91, 123, 138, 0.2);
+      --color-blue-dark: #4A6A78;
+      --color-amber: #C5A55A;
+      --color-amber-light: rgba(197, 165, 90, 0.1);
+      --color-amber-mid: rgba(197, 165, 90, 0.25);
+      --color-warm-accent: #B8866E;
+      --color-warm-accent-light: rgba(184, 134, 110, 0.1);
+
+      /* Borders */
+      --color-border: rgba(42, 35, 33, 0.08);
+      --color-border-warm: rgba(42, 35, 33, 0.12);
+      --color-border-dark: rgba(247, 243, 239, 0.12);
+
+      /* Typography */
+      --font-display: 'Libre Baskerville', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+
+      /* Spacing */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      /* Misc */
+      --radius: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --transition: 300ms ease;
+      --shadow-soft: 0 2px 12px rgba(42, 35, 33, 0.06);
+      --shadow-card: 0 4px 20px rgba(42, 35, 33, 0.08);
+      --max-width: 720px;
+      --max-width-wide: 960px;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-ink);
+      background: var(--color-bg);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+
+    /* ── Container ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-5);
+    }
+
+    .container--wide {
+      max-width: var(--max-width-wide);
+    }
+
+    /* ── Section ── */
+    .hp-section {
+      padding: var(--space-16) 0;
+    }
+
+    @media (min-width: 768px) {
+      .hp-section { padding: var(--space-20) 0; }
+    }
+
+    /* ── Reveal animation ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal--d1 { transition-delay: 0.1s; }
+    .reveal--d2 { transition-delay: 0.2s; }
+    .reveal--d3 { transition-delay: 0.3s; }
+
+    /* ── Divider ── */
+    .hp-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--color-border-warm);
+      margin: 0 auto var(--space-6);
+    }
+
+    /* ============================================================
+       NAVIGATION
+       ============================================================ */
+    .hp-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: var(--space-4) 0;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .hp-nav--scrolled {
+      background: rgba(247, 243, 239, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--color-border);
+    }
+
+    .hp-nav__inner {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 0 var(--space-5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hp-nav__logo img {
+      height: 28px;
+      width: auto;
+      transition: opacity var(--transition);
+    }
+
+    .hp-nav__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-5);
+      background: var(--color-blue);
+      color: #fff;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 99px;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .hp-nav__cta:hover {
+      background: var(--color-blue-dark);
+      transform: translateY(-1px);
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hp-hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(80px + var(--space-12)) var(--space-5) var(--space-16);
+      background: var(--color-bg-hero);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, rgba(91, 123, 138, 0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 30% 80%, rgba(197, 165, 90, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hp-hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+
+    .hp-hero__eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      margin-bottom: var(--space-6);
+    }
+
+    .hp-hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5.5vw, 3.25rem);
+      font-weight: 700;
+      color: var(--color-ink-on-dark);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-6);
+    }
+
+    .hp-hero__headline em {
+      font-style: italic;
+      color: var(--color-blue);
+    }
+
+    .hp-hero__sub {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: var(--color-ink-muted-on-dark);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto var(--space-10);
+    }
+
+    .hp-hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-8);
+      background: var(--color-blue);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 99px;
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+
+    .hp-hero__cta:hover {
+      background: var(--color-blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(91, 123, 138, 0.25);
+    }
+
+    .hp-hero__cta svg {
+      transition: transform var(--transition);
+    }
+
+    .hp-hero__cta:hover svg {
+      transform: translateY(2px);
+    }
+
+    .hp-hero__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      align-items: center;
+    }
+
+    .hp-hero__link {
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted-on-dark);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .hp-hero__link:hover {
+      color: var(--color-ink-on-dark);
+    }
+
+    /* ============================================================
+       EMPATHY — "Let's be honest"
+       ============================================================ */
+    .hp-empathy {
+      background: var(--color-bg);
+    }
+
+    .hp-empathy__content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hp-empathy__headline {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      line-height: 1.25;
+      margin-bottom: var(--space-8);
+    }
+
+    .hp-empathy__text {
+      font-size: var(--text-base);
+      color: var(--color-ink-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+
+    .hp-empathy__text:last-child {
+      margin-bottom: 0;
+    }
+
+    .hp-empathy__text strong {
+      color: var(--color-ink);
+      font-weight: 600;
+    }
+
+    .hp-empathy__staccato {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 3vw, 1.2rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      line-height: 1.6;
+      margin-bottom: var(--space-6);
+    }
+
+    .hp-empathy__staccato span {
+      display: block;
+    }
+
+    .hp-empathy__highlight {
+      margin-top: var(--space-8);
+      padding: var(--space-6);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-warm);
+      border-left: 3px solid var(--color-warm-accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .hp-empathy__highlight p {
+      font-size: var(--text-base);
+      color: var(--color-ink-secondary);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .hp-empathy__highlight strong {
+      font-style: normal;
+      color: var(--color-ink);
+    }
+
+    /* ============================================================
+       MIRROR — Lifestyle Factors
+       ============================================================ */
+    .hp-mirror {
+      background: var(--color-bg-alt);
+    }
+
+    .hp-mirror__card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-warm);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-6);
+      max-width: 580px;
+      margin: 0 auto var(--space-8);
+      box-shadow: var(--shadow-soft);
+    }
+
+    @media (min-width: 640px) {
+      .hp-mirror__card {
+        padding: var(--space-10) var(--space-10);
+      }
+    }
+
+    .hp-mirror__label {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-ink-faint);
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .hp-mirror__list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      list-style: none;
+    }
+
+    .hp-mirror__item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      color: var(--color-ink-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .hp-mirror__icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+    }
+
+    .hp-mirror__closing {
+      text-align: center;
+      font-size: var(--text-base);
+      color: var(--color-ink-secondary);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .hp-mirror__closing strong {
+      color: var(--color-ink);
+    }
+
+    /* ============================================================
+       REASONS — 5-Card Listicle
+       ============================================================ */
+    .hp-reasons {
+      background: var(--color-bg);
+    }
+
+    .hp-reasons__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      text-align: center;
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-reasons__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      text-align: center;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-reasons__subtitle {
+      font-size: var(--text-base);
+      color: var(--color-ink-muted);
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto var(--space-12);
+    }
+
+    .hp-reasons__stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hp-reason {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-warm);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-6);
+      position: relative;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    @media (min-width: 640px) {
+      .hp-reason {
+        padding: var(--space-8) var(--space-10);
+      }
+    }
+
+    .hp-reason:hover {
+      box-shadow: var(--shadow-card);
+      transform: translateY(-2px);
+    }
+
+    .hp-reason__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-blue-light);
+      border: 2px solid var(--color-blue-mid);
+      font-size: var(--text-lg);
+      font-weight: 800;
+      color: var(--color-blue);
+      margin-bottom: var(--space-5);
+    }
+
+    .hp-reason__heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      line-height: 1.3;
+      margin-bottom: var(--space-5);
+    }
+
+    .hp-reason__body {
+      font-size: var(--text-sm);
+      color: var(--color-ink-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--space-5);
+    }
+
+    .hp-reason__body:last-child {
+      margin-bottom: 0;
+    }
+
+    .hp-reason__body strong {
+      color: var(--color-ink);
+      font-weight: 600;
+    }
+
+    .hp-reason__symptoms {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .hp-reason__symptom {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--color-ink-secondary);
+      line-height: 1.6;
+    }
+
+    .hp-reason__symptom-dot {
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-warm-accent);
+      margin-top: 9px;
+    }
+
+    .hp-reason__staccato {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      line-height: 1.6;
+      margin-bottom: var(--space-4);
+    }
+
+    .hp-reason__staccato span {
+      display: block;
+    }
+
+    /* ============================================================
+       MID-PAGE CTA
+       ============================================================ */
+    .hp-midcta {
+      background: var(--color-bg-alt);
+      text-align: center;
+      padding: var(--space-12) 0;
+    }
+
+    .hp-midcta__text {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 3vw, 1.5rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      line-height: 1.35;
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-midcta__sub {
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .hp-midcta__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-8);
+      background: var(--color-blue);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 99px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+
+    .hp-midcta__btn:hover {
+      background: var(--color-blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(91, 123, 138, 0.25);
+    }
+
+    /* ============================================================
+       SIMPLICITY — "Built For Busy Lives"
+       ============================================================ */
+    .hp-simple {
+      background: var(--color-bg);
+    }
+
+    .hp-simple__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      text-align: center;
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-simple__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      text-align: center;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-simple__subtitle {
+      font-size: var(--text-base);
+      color: var(--color-ink-muted);
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto var(--space-10);
+      line-height: 1.7;
+    }
+
+    .hp-simple__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      max-width: 640px;
+      margin: 0 auto var(--space-10);
+    }
+
+    @media (min-width: 640px) {
+      .hp-simple__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .hp-simple__grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .hp-simple__item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-4) var(--space-5);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-warm);
+      border-radius: var(--radius-lg);
+      font-size: var(--text-sm);
+      color: var(--color-ink-secondary);
+      font-weight: 500;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+
+    .hp-simple__item:hover {
+      border-color: var(--color-blue-mid);
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-1px);
+    }
+
+    .hp-simple__item-icon {
+      flex-shrink: 0;
+      font-size: 20px;
+    }
+
+    .hp-simple__callout {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hp-simple__callout-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 3vw, 1.5rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      line-height: 1.35;
+      margin-bottom: var(--space-2);
+    }
+
+    .hp-simple__callout-text {
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       PRODUCT — "The Solution"
+       ============================================================ */
+    .hp-product {
+      background: var(--color-bg-alt);
+    }
+
+    .hp-product__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      text-align: center;
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-product__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      text-align: center;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-4);
+    }
+
+    .hp-product__subtitle {
+      font-size: var(--text-base);
+      color: var(--color-ink-muted);
+      text-align: center;
+      max-width: 540px;
+      margin: 0 auto var(--space-12);
+      line-height: 1.7;
+    }
+
+    /* Product image */
+    .hp-product__img-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .hp-product__img-frame {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      aspect-ratio: 1 / 1;
+    }
+
+    .hp-product__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hp-product__img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(247, 243, 239, 0) 60%,
+        rgba(247, 243, 239, 0.4) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Ingredients */
+    .hp-ingredients {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      max-width: 640px;
+      margin: 0 auto var(--space-10);
+    }
+
+    @media (min-width: 640px) {
+      .hp-ingredients { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .hp-ingredient {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-warm);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-5);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .hp-ingredient:hover {
+      box-shadow: var(--shadow-card);
+      transform: translateY(-2px);
+    }
+
+    .hp-ingredient__name {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-ink);
+      margin-bottom: var(--space-1);
+    }
+
+    .hp-ingredient__role {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-blue);
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-ingredient__desc {
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted);
+      line-height: 1.6;
+    }
+
+    /* How to use */
+    .hp-product__how {
+      max-width: 520px;
+      margin: 0 auto var(--space-10);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-warm);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+    }
+
+    .hp-product__how-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-ink);
+      margin-bottom: var(--space-4);
+      text-align: center;
+    }
+
+    .hp-product__how-steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .hp-product__how-step {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--color-ink-secondary);
+      line-height: 1.6;
+    }
+
+    .hp-product__how-step strong {
+      color: var(--color-ink);
+    }
+
+    .hp-product__how-bullet {
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      margin-top: 8px;
+    }
+
+    /* CTA */
+    .hp-product__cta-wrap {
+      text-align: center;
+    }
+
+    .hp-product__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-10);
+      background: var(--color-blue);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 99px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+
+    .hp-product__cta:hover {
+      background: var(--color-blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(91, 123, 138, 0.25);
+    }
+
+    .hp-product__guarantee {
+      margin-top: var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--color-ink-faint);
+      text-align: center;
+    }
+
+    .hp-product__callout {
+      max-width: 600px;
+      margin: var(--space-10) auto 0;
+      padding: var(--space-6);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-warm);
+      border-left: 3px solid var(--color-blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: var(--text-base);
+      color: var(--color-ink-secondary);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .hp-product__callout strong {
+      font-style: normal;
+      color: var(--color-ink);
+    }
+
+    /* ============================================================
+       REVIEWS
+       ============================================================ */
+    .hp-reviews {
+      background: var(--color-bg);
+    }
+
+    .hp-reviews__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      text-align: center;
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-reviews__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      color: var(--color-ink);
+      text-align: center;
+      line-height: 1.25;
+      margin-bottom: var(--space-3);
+    }
+
+    .hp-reviews__rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-10);
+    }
+
+    .hp-reviews__stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .hp-reviews__star {
+      width: 18px;
+      height: 18px;
+      color: var(--color-amber);
+    }
+
+    .hp-reviews__score {
+      font-size: var(--text-lg);
+      font-weight: 800;
+      color: var(--color-ink);
+    }
+
+    .hp-reviews__count {
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted);
+    }
+
+    .hp-reviews__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .hp-reviews__grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .hp-review {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-warm);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .hp-review:hover {
+      box-shadow: var(--shadow-card);
+      transform: translateY(-2px);
+    }
+
+    .hp-review__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hp-review__stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .hp-review__star {
+      width: 14px;
+      height: 14px;
+      color: var(--color-amber);
+    }
+
+    .hp-review__verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--color-blue);
+      background: var(--color-blue-light);
+      border: 1px solid var(--color-blue-mid);
+      border-radius: 99px;
+      padding: 3px 8px;
+    }
+
+    .hp-review__verified::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--color-blue);
+    }
+
+    .hp-review__title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-ink);
+      line-height: 1.35;
+    }
+
+    .hp-review__body {
+      font-size: var(--text-sm);
+      color: var(--color-ink-secondary);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .hp-review__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .hp-review__name {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-ink);
+    }
+
+    .hp-review__location {
+      font-size: 11px;
+      color: var(--color-ink-muted);
+    }
+
+    .hp-review__date {
+      font-size: 11px;
+      color: var(--color-ink-faint);
+    }
+
+    /* ============================================================
+       FINAL CTA
+       ============================================================ */
+    .hp-cta {
+      background: var(--color-bg-hero);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hp-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(91, 123, 138, 0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hp-cta__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hp-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 5vw, 2.75rem);
+      font-weight: 700;
+      color: var(--color-ink-on-dark);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-4);
+    }
+
+    .hp-cta__title em {
+      font-style: italic;
+      color: var(--color-blue);
+    }
+
+    .hp-cta__sub {
+      font-size: var(--text-lg);
+      color: var(--color-ink-muted-on-dark);
+      max-width: 480px;
+      margin: 0 auto var(--space-10);
+      line-height: 1.7;
+    }
+
+    .hp-cta__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-10);
+      background: var(--color-blue);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 99px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+
+    .hp-cta__btn:hover {
+      background: var(--color-blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(91, 123, 138, 0.3);
+    }
+
+    .hp-cta__note {
+      margin-top: var(--space-6);
+      font-size: var(--text-sm);
+      color: rgba(247, 243, 239, 0.35);
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .hp-footer {
+      background: var(--color-bg-hero);
+      border-top: 1px solid var(--color-border-dark);
+      padding: var(--space-8) 0;
+    }
+
+    .hp-footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-4);
+      text-align: center;
+    }
+
+    .hp-footer__logo img {
+      height: 22px;
+      width: auto;
+      opacity: 0.5;
+    }
+
+    .hp-footer__links {
+      display: flex;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hp-footer__link {
+      font-size: var(--text-xs);
+      color: rgba(247, 243, 239, 0.35);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .hp-footer__link:hover {
+      color: rgba(247, 243, 239, 0.7);
+    }
+
+    .hp-footer__copy {
+      font-size: var(--text-xs);
+      color: rgba(247, 243, 239, 0.2);
+    }
+
+    /* Disclaimer */
+    .hp-disclaimer {
+      background: var(--color-bg-hero);
+      padding: 0 0 var(--space-8);
+    }
+
+    .hp-disclaimer__text {
+      font-size: 11px;
+      color: rgba(247, 243, 239, 0.2);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* ============================================================
+       STICKY CTA
+       ============================================================ */
+    .hp-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(30, 42, 50, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: var(--space-3) var(--space-5);
+      padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .hp-sticky--visible { transform: translateY(0); }
+
+    .hp-sticky__text {
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted-on-dark);
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .hp-sticky__text { display: block; }
+    }
+
+    .hp-sticky__text strong { color: var(--color-ink-on-dark); }
+
+    .hp-sticky__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-5);
+      background: var(--color-blue);
+      color: #fff;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 99px;
+      white-space: nowrap;
+      transition: background var(--transition);
+    }
+
+    .hp-sticky__btn:hover {
+      background: var(--color-blue-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="hp-nav" id="hpNav" role="navigation" aria-label="Main navigation">
+    <div class="hp-nav__inner">
+      <a href="#" class="hp-nav__logo" aria-label="BioStack Labs">
+        <img src="biostack-logo-white.png" alt="BioStack Labs" id="navLogo">
+      </a>
+      <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=highperformerv1" class="hp-nav__cta">Get NAD Regen</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hp-hero" id="top">
+    <div class="hp-hero__content">
+      <span class="hp-hero__eyebrow reveal">Mental clarity for high performers</span>
+
+      <h1 class="hp-hero__headline reveal reveal--d1">
+        Feel like the <em>sharpest</em> person in the room again
+      </h1>
+
+      <p class="hp-hero__sub reveal reveal--d2">
+        No complicated routine. Just support your brain where it matters most.
+      </p>
+
+      <div class="hp-hero__buttons reveal reveal--d3">
+        <a href="#empathy" class="hp-hero__cta">
+          Why your edge feels different
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </a>
+        <a href="#solution" class="hp-hero__link">Skip to the solution &darr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EMPATHY — "Let's be honest"
+       ============================================================ -->
+  <section class="hp-section hp-empathy" id="empathy" aria-labelledby="empathy-title">
+    <div class="container">
+      <div class="hp-empathy__content">
+        <h2 class="hp-empathy__headline reveal" id="empathy-title">Let's be honest</h2>
+
+        <div class="hp-empathy__staccato reveal reveal--d1">
+          <span>You built your reputation on thinking clearly.</span>
+          <span>Making decisions.</span>
+          <span>Solving problems.</span>
+          <span>Seeing what other people miss.</span>
+        </div>
+
+        <p class="hp-empathy__text reveal">
+          But lately, something feels different.
+        </p>
+
+        <p class="hp-empathy__text reveal">
+          You still know what needs to be done. It just takes more effort to get there. Names take longer to come back. Meetings feel more mentally draining. You lose your train of thought halfway through explaining an idea. You reread emails before sending them because you're no longer as confident you caught everything.
+        </p>
+
+        <p class="hp-empathy__text reveal">
+          If you've been wondering whether it's stress, burnout, or simply getting older, you're not alone.
+        </p>
+
+        <p class="hp-empathy__text reveal">
+          <strong>This is incredibly common amongst those who are over 40 and in high-demand positions.</strong> More than ever, modern life attacks our ability to remain sharp and as the years roll by, this starts to compound.
+        </p>
+
+        <div class="hp-empathy__highlight reveal">
+          <p>
+            <strong>Discover why your brain naturally loses some of its cellular energy after 40</strong> and how supporting that process may help you feel mentally sharper again.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MIRROR — Lifestyle Factors
+       ============================================================ -->
+  <section class="hp-section hp-mirror" id="mirror" aria-labelledby="mirror-title">
+    <div class="container">
+      <div class="hp-mirror__card reveal">
+        <div class="hp-mirror__label" id="mirror-title">Sound familiar?</div>
+        <ul class="hp-mirror__list">
+          <li class="hp-mirror__item">
+            <span class="hp-mirror__icon" aria-hidden="true">💻</span>
+            Long days filled with decisions
+          </li>
+          <li class="hp-mirror__item">
+            <span class="hp-mirror__icon" aria-hidden="true">📱</span>
+            Constant context switching between meetings, messages and emails
+          </li>
+          <li class="hp-mirror__item">
+            <span class="hp-mirror__icon" aria-hidden="true">☕</span>
+            Using caffeine to stay switched on
+          </li>
+          <li class="hp-mirror__item">
+            <span class="hp-mirror__icon" aria-hidden="true">😴</span>
+            Sleep that's never quite enough
+          </li>
+          <li class="hp-mirror__item">
+            <span class="hp-mirror__icon" aria-hidden="true">📈</span>
+            The pressure to keep performing year after year
+          </li>
+        </ul>
+      </div>
+      <div class="hp-mirror__closing reveal reveal--d1">
+        <p><strong>None of these mean you're losing your ability.</strong> They simply place more demand on a brain that's already producing less cellular energy than it once did.</p>
+        <p style="margin-top: var(--space-4);">The good news? Supporting your brain doesn't require stepping away from your ambitions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REASONS — "Why It Happens"
+       ============================================================ -->
+  <section class="hp-section hp-reasons" id="reasons" aria-labelledby="reasons-title">
+    <div class="container">
+      <div class="hp-reasons__eyebrow reveal">Why it happens</div>
+      <div class="hp-divider reveal"></div>
+      <h2 class="hp-reasons__title reveal" id="reasons-title">Five everyday reasons your mental edge feels harder to access</h2>
+      <p class="hp-reasons__subtitle reveal reveal--d1">You don't need a neuroscience degree. Just an understanding of what's changing beneath the surface.</p>
+
+      <div class="hp-reasons__stack">
+
+        <!-- Reason 01 -->
+        <div class="hp-reason reveal">
+          <div class="hp-reason__num">01</div>
+          <h3 class="hp-reason__heading">Your Brain Is One Of The Most Energy-Hungry Organs In Your Body</h3>
+          <div class="hp-reason__staccato">
+            <span>Every decision.</span>
+            <span>Every presentation.</span>
+            <span>Every conversation.</span>
+            <span>Every problem you solve.</span>
+          </div>
+          <p class="hp-reason__body">
+            They all require enormous amounts of energy. That energy is produced inside your cells, and NAD+ plays an essential role in that process. From around your mid-30s onwards, NAD levels naturally decline. <strong>By age 50, they're significantly lower than they were in early adulthood.</strong>
+          </p>
+          <p class="hp-reason__body">For people whose careers depend on quick thinking, this gradual change can become surprisingly noticeable. You may recognise:</p>
+          <ul class="hp-reason__symptoms">
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Needing longer to process complex information</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Slower recall during conversations</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Reduced mental stamina across the day</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Feeling mentally "flat" even after a weekend</span>
+            </li>
+          </ul>
+          <p class="hp-reason__body" style="margin-top: var(--space-4); font-style: italic; color: var(--color-ink-muted);">
+            This isn't about intelligence. It's about supporting the systems your brain relies on every day.
+          </p>
+        </div>
+
+        <!-- Reason 02 -->
+        <div class="hp-reason reveal">
+          <div class="hp-reason__num">02</div>
+          <h3 class="hp-reason__heading">Constant Decision-Making Quietly Drains Your Mental Energy</h3>
+          <p class="hp-reason__body">
+            High performers rarely make just a handful of decisions. They make hundreds. Large ones. Small ones. Important ones. Every single day.
+          </p>
+          <p class="hp-reason__body">
+            That continual demand doesn't reduce your intelligence. <strong>It increases your brain's energy requirements.</strong> When those energy systems are already under pressure from age, stress and modern lifestyles, it's common to feel mentally depleted much earlier than you once did.
+          </p>
+          <ul class="hp-reason__symptoms">
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Meetings requiring more concentration</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Reduced focus late in the afternoon</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>More mental fatigue than physical fatigue</span>
+            </li>
+          </ul>
+          <p class="hp-reason__body" style="margin-top: var(--space-4); font-style: italic; color: var(--color-ink-muted);">
+            Supporting healthy cellular energy may help your brain cope better with those daily demands.
+          </p>
+        </div>
+
+        <!-- Reason 03 -->
+        <div class="hp-reason reveal">
+          <div class="hp-reason__num">03</div>
+          <h3 class="hp-reason__heading">Poor Sleep Doesn't Just Leave You Tired</h3>
+          <p class="hp-reason__body">
+            Sleep is when your brain restores itself. It's when important maintenance processes take place. Quality sleep helps support memory, learning and normal cognitive function.
+          </p>
+          <p class="hp-reason__body">
+            <strong>When sleep is interrupted, even by work stress or travel, you don't simply wake up tired. You wake up without feeling fully mentally refreshed.</strong>
+          </p>
+          <ul class="hp-reason__symptoms">
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Starting work feeling one step behind</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Relying on multiple coffees just to feel normal</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Finding it harder to focus as the week goes on</span>
+            </li>
+          </ul>
+          <p class="hp-reason__body" style="margin-top: var(--space-4); font-style: italic; color: var(--color-ink-muted);">
+            Good sleep still matters. But supporting the cellular systems involved in brain energy gives your brain more to work with every day.
+          </p>
+        </div>
+      </div><!-- /first 3 reasons -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MID-PAGE CTA
+       ============================================================ -->
+  <div class="hp-midcta" role="complementary">
+    <div class="container">
+      <p class="hp-midcta__text reveal">Ready to support your mental edge?</p>
+      <p class="hp-midcta__sub reveal reveal--d1">Keep reading, or jump straight to the solution.</p>
+      <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=highperformerv1" class="hp-midcta__btn reveal reveal--d2">
+        Try NAD Regen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       REASONS continued (04–05)
+       ============================================================ -->
+  <section class="hp-section hp-reasons" aria-label="Reasons continued">
+    <div class="container">
+      <div class="hp-reasons__stack">
+
+        <!-- Reason 04 -->
+        <div class="hp-reason reveal">
+          <div class="hp-reason__num">04</div>
+          <h3 class="hp-reason__heading">Chronic Stress Changes More Than Your Mood</h3>
+          <p class="hp-reason__body">
+            Pressure isn't always a problem. Many successful people thrive under pressure. The challenge is when stress never truly switches off.
+          </p>
+          <p class="hp-reason__body">
+            <strong>Long-term stress places additional demands on the body, including the systems involved in producing cellular energy.</strong> Over time that can contribute to:
+          </p>
+          <ul class="hp-reason__symptoms">
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Mental fatigue</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Reduced concentration</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Feeling mentally "full"</span>
+            </li>
+            <li class="hp-reason__symptom">
+              <span class="hp-reason__symptom-dot" aria-hidden="true"></span>
+              <span>Losing your usual sense of clarity</span>
+            </li>
+          </ul>
+          <p class="hp-reason__body" style="margin-top: var(--space-4); font-style: italic; color: var(--color-ink-muted);">
+            You can't always remove the pressure. But you can support your body while you continue performing.
+          </p>
+        </div>
+
+        <!-- Reason 05 -->
+        <div class="hp-reason reveal">
+          <div class="hp-reason__num">05</div>
+          <h3 class="hp-reason__heading">Most High Performers Don't Notice The Change Until They've Been Living With It For Years</h3>
+          <p class="hp-reason__body">
+            Brain fog rarely appears overnight. It's subtle. Gradual. Easy to dismiss. Until one day you realise you haven't felt truly mentally sharp in a long time.
+          </p>
+          <p class="hp-reason__body">
+            You adapt. You compensate. You work harder. Drink more coffee. Double-check everything. <strong>Because that's what high performers do.</strong>
+          </p>
+          <p class="hp-reason__body">
+            But many people find that once they begin consistently supporting their brain's cellular energy, they start noticing the difference between coping... and feeling mentally clear again.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SIMPLICITY — "Built For Busy Lives"
+       ============================================================ -->
+  <section class="hp-section hp-simple" aria-labelledby="simple-title">
+    <div class="container container--wide">
+      <div class="hp-simple__eyebrow reveal">Built for busy lives</div>
+      <div class="hp-divider reveal"></div>
+      <h2 class="hp-simple__title reveal" id="simple-title">NAD Regen works with your schedule, not against it</h2>
+      <p class="hp-simple__subtitle reveal reveal--d1">No complicated protocol. No injections. No clinic appointments. Just two capsules each morning.</p>
+
+      <div class="hp-simple__grid">
+        <div class="hp-simple__item reveal">
+          <span class="hp-simple__item-icon" aria-hidden="true">💼</span>
+          Takes seconds to use
+        </div>
+        <div class="hp-simple__item reveal reveal--d1">
+          <span class="hp-simple__item-icon" aria-hidden="true">✈️</span>
+          Easy to travel with
+        </div>
+        <div class="hp-simple__item reveal reveal--d2">
+          <span class="hp-simple__item-icon" aria-hidden="true">☕</span>
+          Fits into your morning routine
+        </div>
+        <div class="hp-simple__item reveal">
+          <span class="hp-simple__item-icon" aria-hidden="true">📈</span>
+          Supports healthy cellular energy
+        </div>
+        <div class="hp-simple__item reveal reveal--d1">
+          <span class="hp-simple__item-icon" aria-hidden="true">🧠</span>
+          Designed for adults experiencing age-related NAD decline
+        </div>
+        <div class="hp-simple__item reveal reveal--d2">
+          <span class="hp-simple__item-icon" aria-hidden="true">✔️</span>
+          No complicated biohacking required
+        </div>
+      </div>
+
+      <div class="hp-simple__callout reveal">
+        <div class="hp-simple__callout-title">Simple. Consistent. Designed around real life.</div>
+        <p class="hp-simple__callout-text">Most people don't need another productivity system. They need better support for the brain they're already asking so much of.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LIFESTYLE IMAGE
+       ============================================================ -->
+  <div class="hp-section" style="padding: 0;" aria-hidden="true">
+    <div style="max-width: 960px; margin: 0 auto; padding: 0 var(--space-5);">
+      <div class="reveal" style="position: relative; border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 16/7; box-shadow: var(--shadow-card);">
+        <img
+          src="lifestyle-bag.jpg"
+          alt="NAD Regen bottle in a bag — fits into a busy professional's routine"
+          style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block;"
+          loading="lazy"
+        >
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(42,35,33,0) 40%, rgba(42,35,33,0.45) 100%); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-6) var(--space-6) var(--space-5);">
+          <div style="font-family: var(--font-display); font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 700; color: #fff; line-height: 1.3; text-shadow: 0 1px 4px rgba(0,0,0,0.15);">
+            Your edge back. <em style="font-style: italic; color: rgba(255,255,255,0.75); font-weight: 400;">3 seconds a day.</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       REVIEWS
+       ============================================================ -->
+  <section class="hp-section hp-reviews" aria-labelledby="reviews-title">
+    <div class="container container--wide">
+      <div class="hp-reviews__eyebrow reveal">Real results</div>
+      <div class="hp-divider reveal"></div>
+      <h2 class="hp-reviews__title reveal" id="reviews-title">From people who were sceptical too</h2>
+
+      <div class="hp-reviews__rating reveal reveal--d1">
+        <div class="hp-reviews__stars" aria-label="5 stars">
+          <svg class="hp-reviews__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="hp-reviews__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="hp-reviews__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="hp-reviews__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="hp-reviews__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span class="hp-reviews__score">4.9</span>
+        <span class="hp-reviews__count">from verified purchasers</span>
+      </div>
+
+      <div class="hp-reviews__grid" role="list" aria-label="Customer reviews">
+
+        <!-- Review 1 -->
+        <article class="hp-review reveal" role="listitem">
+          <div class="hp-review__header">
+            <div class="hp-review__stars" aria-label="5 out of 5 stars">
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="hp-review__verified">Verified</span>
+          </div>
+          <h3 class="hp-review__title">The brain fog is gone and I can remember what I read now</h3>
+          <p class="hp-review__body">Been using NAD Regen for 2 years now, it took about 4 months to start working but when it did I truly felt it. The brain fog is gone and I can remember what I read now. Highly recommend &#8212; stick with it.</p>
+          <div class="hp-review__footer">
+            <div>
+              <div class="hp-review__name">Sylridx</div>
+              <div class="hp-review__location">&#127482;&#127480; Webster, US</div>
+            </div>
+            <span class="hp-review__date">Feb 12, 2026</span>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="hp-review reveal reveal--d1" role="listitem">
+          <div class="hp-review__header">
+            <div class="hp-review__stars" aria-label="5 out of 5 stars">
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+          <h3 class="hp-review__title">No more 3pm energy crash</h3>
+          <p class="hp-review__body">I&#8217;ve been taking NAD Regen for approximately 7 months now. This has skyrocketed my energy levels both mentally and physically. I no longer get the 3pm crash. The brain fog also lifted very quickly. I&#8217;m 67 and still feel sharp.</p>
+          <div class="hp-review__footer">
+            <div>
+              <div class="hp-review__name">Frank S.</div>
+              <div class="hp-review__location">&#127482;&#127480; Daytona Beach, US</div>
+            </div>
+            <span class="hp-review__date">Feb 15, 2026</span>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="hp-review reveal reveal--d2" role="listitem">
+          <div class="hp-review__header">
+            <div class="hp-review__stars" aria-label="5 out of 5 stars">
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hp-review__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="hp-review__verified">Verified</span>
+          </div>
+          <h3 class="hp-review__title">Don&#8217;t need energy drinks anymore</h3>
+          <p class="hp-review__body">It has been nine months since I started. I am 35 and have been on a journey to find the right supplements. Slowly and quietly I didn&#8217;t need energy drinks anymore and even rarely do I need coffee. It took time but the effects are real.</p>
+          <div class="hp-review__footer">
+            <div>
+              <div class="hp-review__name">Dana</div>
+              <div class="hp-review__location">&#127482;&#127480; Crestwood, US</div>
+            </div>
+            <span class="hp-review__date">Feb 13, 2026</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THE SOLUTION — Product Section
+       ============================================================ -->
+  <section class="hp-section hp-product" id="solution" aria-labelledby="product-title">
+    <div class="container container--wide">
+      <div class="hp-product__eyebrow reveal">The solution</div>
+      <div class="hp-divider reveal"></div>
+      <h2 class="hp-product__title reveal" id="product-title">Support The Cellular Energy Your Brain Depends On</h2>
+      <p class="hp-product__subtitle reveal reveal--d1">Rather than relying on temporary stimulation, NAD Regen combines ingredients selected to support healthy NAD metabolism and cellular function.</p>
+
+      <div class="hp-product__img-wrap reveal reveal--d2">
+        <div class="hp-product__img-frame">
+          <img src="lifestyle-kitchen.jpg" alt="NAD Regen bottle on a kitchen counter with morning coffee" class="hp-product__img" loading="lazy">
+          <div class="hp-product__img-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Ingredients -->
+      <div class="hp-ingredients">
+        <div class="hp-ingredient reveal">
+          <div class="hp-ingredient__name">NAD3&#8482;</div>
+          <div class="hp-ingredient__role">NAD+ support</div>
+          <p class="hp-ingredient__desc">Designed to support healthy NAD levels</p>
+        </div>
+        <div class="hp-ingredient reveal reveal--d1">
+          <div class="hp-ingredient__name">Spermidine</div>
+          <div class="hp-ingredient__role">Cellular renewal</div>
+          <p class="hp-ingredient__desc">Supports normal cellular renewal processes</p>
+        </div>
+        <div class="hp-ingredient reveal reveal--d2">
+          <div class="hp-ingredient__name">Resveratrol</div>
+          <div class="hp-ingredient__role">Healthy aging</div>
+          <p class="hp-ingredient__desc">Supports pathways involved in healthy aging</p>
+        </div>
+        <div class="hp-ingredient reveal reveal--d3">
+          <div class="hp-ingredient__name">Niacinamide</div>
+          <div class="hp-ingredient__role">NAD precursor</div>
+          <p class="hp-ingredient__desc">A precursor involved in NAD metabolism</p>
+        </div>
+      </div>
+
+      <!-- How to use -->
+      <div class="hp-product__how reveal">
+        <div class="hp-product__how-title">How to use it</div>
+        <div class="hp-product__how-steps">
+          <div class="hp-product__how-step">
+            <span class="hp-product__how-bullet" aria-hidden="true"></span>
+            <span><strong>Take 2 capsules in the morning.</strong> With breakfast or without. Takes 3 seconds.</span>
+          </div>
+          <div class="hp-product__how-step">
+            <span class="hp-product__how-bullet" aria-hidden="true"></span>
+            <span><strong>Give it 4&#8211;8 weeks.</strong> Your NAD+ levels took years to decline. This is a restoration, not a quick fix. Most people notice the shift between weeks 4 and 8.</span>
+          </div>
+          <div class="hp-product__how-step">
+            <span class="hp-product__how-bullet" aria-hidden="true"></span>
+            <span><strong>Notice the difference.</strong> Clearer mornings. Easier concentration. Fewer "why did I walk in here?" moments.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="hp-product__cta-wrap reveal">
+        <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=highperformerv1" class="hp-product__cta">
+          Try NAD Regen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="hp-product__guarantee">60-day money back guarantee &bull; Free shipping on orders over $150</p>
+      </div>
+
+      <div class="hp-product__callout reveal">
+        <strong>When your career depends on your mind,</strong> supporting the health of the cells that power it is one of the smartest long-term investments you can make. No injections. No complicated routines. Just two capsules each morning as part of your daily routine.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+       ============================================================ -->
+  <section class="hp-section hp-cta" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="hp-cta__content">
+        <h2 class="hp-cta__title reveal" id="cta-title">
+          Feel like the<br><em>sharpest person in the room</em> again
+        </h2>
+        <p class="hp-cta__sub reveal reveal--d1">
+          Your brain hasn't lost its ability. It just needs the right support. Now you know what kind.
+        </p>
+        <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=highperformerv1" class="hp-cta__btn reveal reveal--d2">
+          Shop NAD Regen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="hp-cta__note reveal reveal--d3">Free shipping on orders over $150 &bull; 60-day money back guarantee &bull; No lifestyle changes required</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="hp-footer" role="contentinfo">
+    <div class="container">
+      <div class="hp-footer__inner">
+        <a href="https://biostacklabs.com" class="hp-footer__logo" aria-label="BioStack Labs">
+          <img src="biostack-logo-white.png" alt="BioStack Labs">
+        </a>
+        <div class="hp-footer__links">
+          <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=highperformerv1" class="hp-footer__link">NAD Regen</a>
+          <a href="https://biostacklabs.com/collections/all-products" class="hp-footer__link">All Products</a>
+          <a href="https://biostacklabs.com/pages/about-us" class="hp-footer__link">About</a>
+          <a href="https://biostacklabs.com/pages/contact-us" class="hp-footer__link">Contact</a>
+        </div>
+        <div class="hp-footer__links">
+          <a href="https://biostacklabs.com/policies/privacy-policy" class="hp-footer__link">Privacy</a>
+          <a href="https://biostacklabs.com/pages/terms-of-service" class="hp-footer__link">Terms</a>
+          <a href="https://biostacklabs.com/policies/refund-policy" class="hp-footer__link">Returns</a>
+        </div>
+        <span class="hp-footer__copy">&copy; 2026 BioStack Labs. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Disclaimer -->
+  <div class="hp-disclaimer" role="note" aria-label="Legal disclaimer">
+    <div class="container">
+      <p class="hp-disclaimer__text">
+        * These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. The information on this page is for educational purposes only and is not a substitute for professional medical advice. Always consult your physician before starting any new supplement regimen.
+      </p>
+    </div>
+  </div>
+
+  <!-- Sticky CTA bar -->
+  <div class="hp-sticky" id="stickyCta" role="complementary" aria-label="Quick purchase CTA">
+    <p class="hp-sticky__text"><strong>NAD Regen</strong> — 2 capsules a day. Your edge, restored.</p>
+    <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=highperformerv1" class="hp-sticky__btn" aria-label="Shop NAD Regen now">Shop Now</a>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // ── Scroll-driven nav ──
+    const nav = document.getElementById('hpNav');
+    const logoImg = document.getElementById('navLogo');
+    const stickyCta = document.getElementById('stickyCta');
+
+    function onScroll() {
+      const scrolled = window.scrollY;
+
+      if (scrolled > 60) {
+        nav.classList.add('hp-nav--scrolled');
+        if (logoImg) logoImg.src = 'biostack-logo-dark.png';
+      } else {
+        nav.classList.remove('hp-nav--scrolled');
+        if (logoImg) logoImg.src = 'biostack-logo-white.png';
+      }
+
+      if (scrolled > 600) {
+        stickyCta.classList.add('hp-sticky--visible');
+      } else {
+        stickyCta.classList.remove('hp-sticky--visible');
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Reveal on scroll ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+  <!-- GoAffPro Affiliate Tracking -->
+  <script type="text/javascript" src="https://api.goaffpro.com/loader.js?shop=biostack-labs.myshopify.com"></script>
+
+</body>
+</html>
