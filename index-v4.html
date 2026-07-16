@@ -46,6 +46,11 @@
        act as a direct child so all existing img selectors/sizing apply. */
     picture { display: contents; }
 
+    /* v4 is all Inter. The only element pulling in the shared Syne display
+       font is the (off-screen) mobile menu — override it so the Syne webfont
+       (~33KB, render-path) is never requested. */
+    .mobile-menu__link { font-family: var(--font-body); }
+
     /* Grid children must be allowed to shrink below their intrinsic
        (image) width, or the shared track blows out past the viewport
        and html{overflow-x:hidden} clips every line. */
