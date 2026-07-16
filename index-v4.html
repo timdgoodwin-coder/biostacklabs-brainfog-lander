@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>6 Reasons People Over 40 Swear By NAD Regen | BioStack Labs</title>
   <meta name="description" content="Tired but wired, foggy by 3pm, losing your words? You're not falling apart — your cells are running low on fuel. Here are 6 reasons people 40+ swear by NAD Regen. 40% off your first month.">
+
+  <!-- Fonts: preconnect + parallel load so text renders without waiting on style.css's @import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap">
+
+  <!-- Preload the LCP hero image -->
+  <link rel="preload" as="image" href="lifestyle-holding-bottle-opt.webp" type="image/webp" fetchpriority="high">
+
   <link rel="stylesheet" href="style.css">
 
   <!-- Meta Pixel Code -->
@@ -32,6 +41,10 @@
        ============================================================ */
 
     :root { --ann-h: 42px; }
+
+    /* <picture> wrappers should not affect layout — let the inner <img>
+       act as a direct child so all existing img selectors/sizing apply. */
+    picture { display: contents; }
 
     /* Grid children must be allowed to shrink below their intrinsic
        (image) width, or the shared track blows out past the viewport
@@ -581,7 +594,10 @@
     <div class="container">
       <div class="nav__inner">
         <a href="#top" class="nav__logo" aria-label="BioStack Labs">
-          <img src="biostack-logo-white.png" alt="BioStack Labs" style="height:36px;width:auto;object-fit:contain;">
+          <picture>
+            <source srcset="biostack-logo-white-opt.webp" type="image/webp">
+            <img src="biostack-logo-white-opt.png" alt="BioStack Labs" width="160" height="160" style="height:36px;width:auto;object-fit:contain;">
+          </picture>
         </a>
         <div class="nav__links">
           <a href="#reasons" class="nav__link">Why It Works</a>
@@ -665,7 +681,10 @@
         </div>
 
         <div class="hero__visual-wrap">
-          <img src="lifestyle-holding-bottle.jpg" alt="A person holding a bottle of NAD Regen in their kitchen" class="hero__lifestyle" loading="eager" decoding="async">
+          <picture>
+            <source srcset="lifestyle-holding-bottle-opt.webp" type="image/webp">
+            <img src="lifestyle-holding-bottle-opt.jpg" alt="A person holding a bottle of NAD Regen in their kitchen" class="hero__lifestyle" width="1000" height="1000" loading="eager" fetchpriority="high" decoding="async">
+          </picture>
           <div class="hero__capsule-callout">
             <span class="hero__capsule-num">2 caps</span>
             <span class="hero__capsule-text"><strong>Once a morning.</strong>That's the whole routine.</span>
@@ -840,7 +859,10 @@
           </div>
           <div class="reason__visual">
             <div class="imgstat">
-              <img src="NADRegenOnTable.png" alt="NAD Regen bottle on a wooden table" class="imgstat__img" loading="lazy">
+              <picture>
+                <source srcset="NADRegenOnTable-opt.webp" type="image/webp">
+                <img src="NADRegenOnTable-opt.jpg" alt="NAD Regen bottle on a wooden table" class="imgstat__img" width="960" height="640" loading="lazy" decoding="async">
+              </picture>
               <div class="imgstat__overlay">
                 <div class="imgstat__badge"><span class="imgstat__score">4.9★</span> average from verified purchasers</div>
               </div>
@@ -866,7 +888,10 @@
 
       <div class="inside__grid">
         <div class="inside__product reveal">
-          <img src="nad-regen-bottle.png" alt="NAD Regen supplement bottle">
+          <picture>
+            <source srcset="nad-regen-bottle-opt.webp" type="image/webp">
+            <img src="nad-regen-bottle-opt.png" alt="NAD Regen supplement bottle" width="800" height="800" loading="lazy" decoding="async">
+          </picture>
         </div>
 
         <div class="ingredients reveal reveal--delay-1">
@@ -1219,7 +1244,10 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="biostack-logo-white.png" alt="BioStack Labs" style="height:28px;width:auto;margin-bottom:var(--space-4);">
+          <picture>
+            <source srcset="biostack-logo-white-opt.webp" type="image/webp">
+            <img src="biostack-logo-white-opt.png" alt="BioStack Labs" width="160" height="160" loading="lazy" style="height:28px;width:auto;margin-bottom:var(--space-4);">
+          </picture>
           <p class="footer__tagline">Science-backed cellular nutrition for peak human performance.</p>
         </div>
         <div class="footer__nav-group">
@@ -1346,7 +1374,7 @@
   </script>
 
   <!-- GoAffPro Affiliate Tracking -->
-  <script type="text/javascript" src="https://api.goaffpro.com/loader.js?shop=biostack-labs.myshopify.com"></script>
+  <script type="text/javascript" src="https://api.goaffpro.com/loader.js?shop=biostack-labs.myshopify.com" async></script>
 
 </body>
 </html>
