@@ -4,32 +4,14 @@
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
   <title>BioStack Labs — NAD Regen</title>
+  <!-- Single live variant: always route to index-v4.html -->
   <script>
-    (function () {
-      var COOKIE = 'biostack_ab';
-      var PAGES  = ['index-v2.html', 'index-v3.html'];
-
-      function getCookie(name) {
-        var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
-        return match ? decodeURIComponent(match[1]) : null;
-      }
-
-      function setCookie(name, value, days) {
-        var expires = new Date(Date.now() + days * 864e5).toUTCString();
-        document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax';
-      }
-
-      var assigned = getCookie(COOKIE);
-      if (!assigned || PAGES.indexOf(assigned) === -1) {
-        assigned = PAGES[Math.random() < 0.5 ? 0 : 1];
-        setCookie(COOKIE, assigned, 90);
-      }
-
-      window.location.replace(assigned);
-    })();
+    window.location.replace('index-v4.html');
   </script>
+  <meta http-equiv="refresh" content="0; url=index-v4.html">
 </head>
 <body>
   <!-- Redirecting… -->
+  <p><a href="index-v4.html">Continue to NAD Regen</a></p>
 </body>
 </html>

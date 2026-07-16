@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>6 Reasons People Over 40 Swear By NAD Regen | BioStack Labs</title>
+  <meta name="description" content="Tired but wired, foggy by 3pm, losing your words? You're not falling apart — your cells are running low on fuel. Here are 6 reasons people 40+ swear by NAD Regen. 40% off your first month.">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2676399889319515');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2676399889319515&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    /* ============================================================
+       LANDER V4 — "6 REASONS" STRUCTURE (mirrors pp.biostacklabs.com)
+       Keeps V2's gender-neutral brain-fog angle.
+       ============================================================ */
+
+    :root { --ann-h: 42px; }
+
+    /* Grid children must be allowed to shrink below their intrinsic
+       (image) width, or the shared track blows out past the viewport
+       and html{overflow-x:hidden} clips every line. */
+    .hero__grid--split > *,
+    .reason > *,
+    .inside__grid > *,
+    .pricing__grid > * { min-width: 0; }
+
+    /* Progress bar */
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent-gold), #E8B84B);
+      width: 0%;
+      z-index: 200;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Announcement bar ── */
+    .announcement-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: var(--ann-h);
+      z-index: 101;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      background: var(--color-hero-bg);
+      border-bottom: 1px solid var(--color-border-dark);
+      color: var(--color-text-muted-on-dark);
+      font-size: var(--text-xs);
+      letter-spacing: 0.02em;
+      text-align: center;
+      padding: 0 var(--space-4);
+    }
+    .announcement-bar strong { color: var(--color-accent-gold); font-weight: 700; }
+    .announcement-bar__sep { opacity: 0.4; }
+    @media (max-width: 480px) { .announcement-bar__sep { display: none; } }
+
+    /* Nav sits at the top of the page and scrolls away with content (not sticky) */
+    #mainNav { position: absolute; top: var(--ann-h); }
+
+    /* ── Hero ── */
+    .hero { min-height: auto; padding: calc(var(--ann-h) + var(--nav-height) + var(--space-6)) 0 var(--space-10); }
+    @media (min-width: 1024px) {
+      .hero { padding: calc(var(--ann-h) + var(--nav-height) + var(--space-8)) 0 var(--space-12); }
+    }
+
+    .hero__grid--split {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: "top" "visual" "bottom";
+      row-gap: var(--space-5);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    /* Neutralise the base .hero__content padding (space-24 top+bottom on
+       desktop) so spacing is driven only by element margins + grid gaps. */
+    .hero__content--top,
+    .hero__content--bottom { padding: 0; width: 100%; }
+
+    /* Mobile: unwrap the text so headline/subhead are grid items and the
+       image can sit between them via grid areas. */
+    .hero__text { display: contents; }
+    .hero__content--top { grid-area: top; }
+    .hero__visual-wrap { grid-area: visual; }
+    .hero__content--bottom { grid-area: bottom; }
+
+    @media (min-width: 1024px) {
+      .hero__grid--split {
+        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-areas: "text visual";
+        column-gap: var(--space-16);
+        row-gap: 0;
+        align-items: center;
+      }
+      /* Desktop: text is one flex column beside the image — no grid
+         row-spanning, so nothing can stretch the headline off the subhead. */
+      .hero__text { display: flex; flex-direction: column; grid-area: text; }
+      .hero__visual-wrap { grid-area: visual; align-self: center; }
+    }
+
+    /* Slim mobile nav + tighter hero top so the image sits above the fold */
+    @media (max-width: 767px) {
+      #mainNav { height: 52px; padding-top: 0; }
+      #mainNav .nav__logo img { height: 26px !important; }
+      .hero { padding-top: calc(var(--ann-h) + 52px + var(--space-3)); padding-bottom: var(--space-8); }
+      .hero__badge { margin-bottom: var(--space-4); }
+      .hero__headline { margin-bottom: var(--space-3); }
+      .hero__lifestyle { aspect-ratio: 4 / 3; }
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(184,144,42,0.12);
+      border: 1px solid rgba(184,144,42,0.3);
+      border-radius: 99px;
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-accent-gold);
+      margin-bottom: var(--space-5);
+    }
+    .hero__badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--color-accent-gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(0.8);} }
+
+    .hero__headline em { font-style: normal; color: var(--color-accent-gold); }
+
+    .hero__subheadline strong { color: var(--color-text-on-dark); }
+
+    /* Hero rating row */
+    .hero__rating {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin: var(--space-6) 0 var(--space-6);
+      flex-wrap: wrap;
+    }
+    .hero__rating-stars { display: flex; gap: 2px; }
+    .hero__rating-star { width: 18px; height: 18px; color: var(--color-accent-gold); }
+    .hero__rating-score { font-weight: 800; color: var(--color-text-on-dark); }
+    .hero__rating-label { font-size: var(--text-sm); color: var(--color-text-muted-on-dark); }
+    .hero__rating-label strong { color: var(--color-text-on-dark); }
+
+    .hero__actions { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+    @media (max-width: 480px) { .hero__actions { flex-direction: column; } .hero__actions .btn { justify-content: center; } }
+
+    .hero__guarantee {
+      display: flex; align-items: center; gap: var(--space-4);
+      margin-top: var(--space-5);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted-on-dark);
+      flex-wrap: wrap;
+    }
+    .hero__guarantee span { display: inline-flex; align-items: center; gap: var(--space-2); }
+    .hero__guarantee span::before {
+      content: ''; width: 14px; height: 14px; border-radius: 50%;
+      background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.5);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: center; background-size: 9px;
+    }
+
+    /* Hero visual — lifestyle image + capsule callout */
+    .hero__visual-wrap { position: relative; }
+    .hero__lifestyle {
+      width: 100%;
+      border-radius: var(--border-radius-xl);
+      border: 1px solid var(--color-border-dark);
+      box-shadow: var(--shadow-xl);
+      object-fit: cover;
+      aspect-ratio: 4 / 3.4;
+    }
+    .hero__capsule-callout {
+      position: absolute;
+      bottom: var(--space-5); left: var(--space-5);
+      display: flex; align-items: center; gap: var(--space-3);
+      background: rgba(13,15,17,0.82);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--color-border-dark);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-3) var(--space-4);
+    }
+    .hero__capsule-num {
+      font-size: var(--text-xl); font-weight: 800;
+      color: var(--color-accent-gold); line-height: 1; white-space: nowrap;
+    }
+    .hero__capsule-text { font-size: var(--text-xs); color: var(--color-text-muted-on-dark); line-height: 1.35; }
+    .hero__capsule-text strong { color: var(--color-text-on-dark); display: block; }
+
+    /* Trust badge strip */
+    .trust-strip {
+      background: var(--color-dark-section);
+      border-top: 1px solid var(--color-border-dark);
+      border-bottom: 1px solid var(--color-border-dark);
+      padding: var(--space-5) 0;
+    }
+    .trust-strip__inner {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: var(--space-4) var(--space-8);
+    }
+    .trust-badge {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.03em;
+      color: var(--color-text-muted-on-dark);
+    }
+    .trust-badge span { font-size: 15px; }
+
+    /* ── Reasons ── */
+    .reasons { background: var(--color-bg-base); }
+    .reasons__list { display: flex; flex-direction: column; gap: var(--space-6); max-width: 1080px; margin: 0 auto; }
+
+    .reason {
+      background: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-xl);
+      padding: var(--space-6);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      align-items: center;
+      transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+    }
+    .reason:hover { box-shadow: var(--shadow-lg); border-color: rgba(184,144,42,0.22); }
+    @media (min-width: 900px) {
+      .reason { grid-template-columns: 1.35fr 1fr; gap: var(--space-10); padding: var(--space-10); }
+      .reason--flip .reason__visual { order: -1; }
+    }
+
+    .reason__eyebrow {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--color-accent-gold);
+      margin-bottom: var(--space-3);
+    }
+    .reason__eyebrow-icon { font-size: 16px; }
+    .reason__title {
+      font-size: clamp(1.25rem, 3.2vw, 1.6rem); font-weight: 800; letter-spacing: -0.02em;
+      color: var(--color-text-primary); line-height: 1.2; margin-bottom: var(--space-4);
+    }
+    .reason__body { font-size: var(--text-base); line-height: 1.72; color: var(--color-text-secondary); }
+    .reason__body p { margin-bottom: var(--space-4); }
+    .reason__body p:last-child { margin-bottom: 0; }
+    .reason__body strong { color: var(--color-text-primary); font-weight: 700; }
+    .reason__body sup a { color: var(--color-accent-gold); font-weight: 700; font-size: 0.7em; text-decoration: none; }
+
+    .reason__tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
+    .reason__tag {
+      font-size: var(--text-xs); font-weight: 600;
+      color: var(--color-text-muted);
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: 99px; padding: 4px var(--space-3);
+    }
+
+    /* Visual: big stat */
+    .stat-hero {
+      background: var(--color-dark-card);
+      border: 1px solid rgba(184,144,42,0.3);
+      border-radius: var(--border-radius-xl);
+      padding: var(--space-8) var(--space-6);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .stat-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(184,144,42,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .stat-hero__value {
+      font-size: clamp(3rem, 10vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em;
+      color: var(--color-accent-gold); line-height: 1; position: relative;
+    }
+    .stat-hero__label {
+      margin-top: var(--space-3); font-size: var(--text-sm); line-height: 1.5;
+      color: var(--color-text-muted-on-dark); position: relative;
+    }
+
+    /* Visual: trio (produce/recycle/protect) */
+    .trio { display: grid; grid-template-columns: 1fr; gap: var(--space-3); }
+    .trio__card {
+      display: flex; align-items: center; gap: var(--space-4);
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-4) var(--space-5);
+    }
+    .trio__icon {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+      background: var(--color-accent-gold-light); border: 1px solid rgba(184,144,42,0.25);
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .trio__label { font-size: var(--text-sm); font-weight: 800; color: var(--color-text-primary); }
+    .trio__desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.45; }
+
+    /* Visual: comparison */
+    .versus { display: grid; grid-template-columns: 1fr; gap: var(--space-3); }
+    .versus__card {
+      border-radius: var(--border-radius-lg); padding: var(--space-5); text-align: center;
+      border: 1px solid var(--color-border);
+    }
+    .versus__card--bad { background: var(--color-bg-elevated); }
+    .versus__card--good { background: var(--color-dark-card); border-color: rgba(184,144,42,0.35); }
+    .versus__icon { font-size: 26px; margin-bottom: var(--space-2); }
+    .versus__name { font-size: var(--text-base); font-weight: 800; margin-bottom: var(--space-1); }
+    .versus__card--bad .versus__name { color: var(--color-text-primary); }
+    .versus__card--good .versus__name { color: var(--color-text-on-dark); }
+    .versus__meta { font-size: var(--text-xs); }
+    .versus__card--bad .versus__meta { color: var(--color-text-muted); }
+    .versus__card--good .versus__meta { color: var(--color-accent-gold); font-weight: 600; }
+
+    /* Visual: timeline */
+    .timeline { display: flex; flex-direction: column; gap: var(--space-3); }
+    .timeline__row {
+      display: flex; align-items: center; gap: var(--space-4);
+      background: var(--color-bg-elevated); border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg); padding: var(--space-4) var(--space-5);
+    }
+    .timeline__dot {
+      flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%;
+      background: var(--color-accent-gold);
+    }
+    .timeline__row--muted .timeline__dot { background: var(--color-text-faint); }
+    .timeline__when { font-size: var(--text-sm); font-weight: 800; color: var(--color-text-primary); min-width: 84px; }
+    .timeline__what { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.4; }
+
+    /* Visual: image stat (reason 06) */
+    .imgstat { position: relative; border-radius: var(--border-radius-xl); overflow: hidden; }
+    .imgstat__img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+    .imgstat__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(10,10,15,0.1) 0%, rgba(10,10,15,0.85) 100%);
+      display: flex; align-items: flex-end; padding: var(--space-5);
+    }
+    .imgstat__badge {
+      display: flex; align-items: center; gap: var(--space-2);
+      color: #fff; font-size: var(--text-sm); font-weight: 700;
+    }
+    .imgstat__score { font-size: var(--text-2xl); font-weight: 800; color: var(--color-accent-gold); }
+
+    /* ── What's inside ── */
+    .inside { background: var(--color-bg-surface); border-top: 1px solid var(--color-border); }
+    .inside__grid {
+      display: grid; grid-template-columns: 1fr; gap: var(--space-12); align-items: center;
+    }
+    @media (min-width: 1024px) { .inside__grid { grid-template-columns: 0.85fr 1.15fr; gap: var(--space-16); } }
+    .inside__product { display: flex; justify-content: center; }
+    .inside__product img {
+      width: 100%; max-width: 380px;
+      filter: drop-shadow(0 24px 48px rgba(0,0,0,0.2));
+      animation: productFloat 4s ease-in-out infinite;
+    }
+    @keyframes productFloat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+
+    .ingredients { display: flex; flex-direction: column; gap: var(--space-4); }
+    .ingredient {
+      display: flex; align-items: flex-start; gap: var(--space-4);
+      background: var(--color-bg-elevated); border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg); padding: var(--space-5);
+    }
+    .ingredient__icon {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+      background: var(--color-accent-gold-light); border: 1px solid rgba(184,144,42,0.25);
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .ingredient__role { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-gold); margin-bottom: 2px; }
+    .ingredient__name { font-size: var(--text-base); font-weight: 800; color: var(--color-text-primary); margin-bottom: var(--space-1); }
+    .ingredient__desc { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6; }
+    .ingredient__desc sup a { color: var(--color-accent-gold); font-weight: 700; font-size: 0.7em; }
+
+    /* ── Pricing ── */
+    .pricing { background: var(--color-hero-bg); position: relative; overflow: hidden; }
+    .pricing__glow {
+      position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse, rgba(184,144,42,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pricing .container { position: relative; z-index: 1; }
+    .pricing .section-header__title, .pricing .section-header__subtitle { color: var(--color-text-on-dark); }
+    .pricing .section-header__subtitle { color: var(--color-text-muted-on-dark); }
+
+    .pricing__grid {
+      display: grid; grid-template-columns: 1fr; gap: var(--space-5);
+      max-width: 820px; margin: 0 auto;
+    }
+    @media (min-width: 768px) { .pricing__grid { grid-template-columns: 1.1fr 0.9fr; align-items: stretch; } }
+
+    .plan {
+      position: relative;
+      background: var(--color-dark-card);
+      border: 1px solid var(--color-border-dark);
+      border-radius: var(--border-radius-xl);
+      padding: var(--space-8) var(--space-6);
+      display: flex; flex-direction: column;
+    }
+    .plan--featured { border-color: rgba(184,144,42,0.5); box-shadow: 0 0 0 1px rgba(184,144,42,0.25); }
+    .plan__flag {
+      position: absolute; top: 0; right: var(--space-6); transform: translateY(-50%);
+      background: var(--color-accent-gold); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      border-radius: 99px; padding: 4px var(--space-3);
+    }
+    .plan__name { font-size: var(--text-lg); font-weight: 800; color: var(--color-text-on-dark); }
+    .plan__sub { font-size: var(--text-xs); color: var(--color-text-muted-on-dark); margin-top: 2px; }
+    .plan__price { display: flex; align-items: baseline; gap: var(--space-3); margin: var(--space-5) 0 var(--space-1); }
+    .plan__price-now { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; color: var(--color-text-on-dark); }
+    .plan__price-was { font-size: var(--text-lg); color: var(--color-text-muted-on-dark); text-decoration: line-through; }
+    .plan__price-note { font-size: var(--text-xs); color: var(--color-text-muted-on-dark); margin-bottom: var(--space-5); }
+    .plan__perks { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+    .plan__perk {
+      font-size: 11px; font-weight: 600; color: var(--color-accent-gold);
+      background: var(--color-accent-gold-light); border: 1px solid rgba(184,144,42,0.25);
+      border-radius: 99px; padding: 3px var(--space-3);
+    }
+    .plan--plain .plan__perk { color: var(--color-text-muted-on-dark); background: rgba(255,255,255,0.04); border-color: var(--color-border-dark); }
+    .plan .btn { margin-top: auto; width: 100%; justify-content: center; }
+
+    .pricing__day { text-align: center; margin: var(--space-8) auto 0; color: var(--color-text-muted-on-dark); font-size: var(--text-sm); max-width: 520px; }
+    .pricing__day strong { color: var(--color-accent-gold); }
+
+    .guarantee-box {
+      display: flex; align-items: center; gap: var(--space-5);
+      max-width: 620px; margin: var(--space-8) auto 0;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--color-border-dark);
+      border-radius: var(--border-radius-lg); padding: var(--space-5) var(--space-6);
+    }
+    .guarantee-box__icon { flex-shrink: 0; font-size: 30px; }
+    .guarantee-box__title { font-size: var(--text-base); font-weight: 800; color: var(--color-text-on-dark); margin-bottom: 2px; }
+    .guarantee-box__text { font-size: var(--text-sm); color: var(--color-text-muted-on-dark); line-height: 1.55; }
+
+    /* ── FAQ ── */
+    .faq { background: var(--color-bg-base); }
+    .faq__list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-3); }
+    .faq-item {
+      background: var(--color-bg-surface); border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg); overflow: hidden;
+    }
+    .faq-item[open] { border-color: rgba(184,144,42,0.3); }
+    .faq-item__q {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--text-base); font-weight: 700; color: var(--color-text-primary);
+    }
+    .faq-item__q::-webkit-details-marker { display: none; }
+    .faq-item__icon {
+      flex-shrink: 0; width: 24px; height: 24px; position: relative; transition: transform var(--transition-normal);
+      color: var(--color-accent-gold);
+    }
+    .faq-item[open] .faq-item__icon { transform: rotate(45deg); }
+    .faq-item__a {
+      padding: 0 var(--space-6) var(--space-6);
+      font-size: var(--text-sm); line-height: 1.7; color: var(--color-text-secondary);
+    }
+    .faq-item__a strong { color: var(--color-text-primary); }
+
+    /* ── Social proof / reviews ── */
+    .social-proof { background: var(--color-bg-surface); border-top: 1px solid var(--color-border); }
+    .reviews-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-5); max-width: 1080px; margin: 0 auto; }
+    @media (min-width: 640px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .review-card {
+      background: var(--color-bg-base); border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-xl); padding: var(--space-6);
+      display: flex; flex-direction: column; gap: var(--space-4);
+      transition: box-shadow var(--transition-normal), border-color var(--transition-normal), transform var(--transition-normal);
+    }
+    .review-card:hover { box-shadow: var(--shadow-lg); border-color: rgba(184,144,42,0.2); transform: translateY(-2px); }
+    .review-card__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+    .review-card__stars { display: flex; gap: 2px; }
+    .review-card__star { width: 16px; height: 16px; color: var(--color-accent-gold); }
+    .review-card__verified {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #22c55e;
+      background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+      border-radius: 99px; padding: 3px 8px; white-space: nowrap;
+    }
+    .review-card__verified::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
+    .review-card__title { font-size: var(--text-base); font-weight: 700; color: var(--color-text-primary); line-height: 1.3; }
+    .review-card__body { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.7; flex: 1; }
+    .review-card__footer { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding-top: var(--space-4); border-top: 1px solid var(--color-border); }
+    .review-card__author { display: flex; flex-direction: column; gap: 2px; }
+    .review-card__name { font-size: var(--text-sm); font-weight: 700; color: var(--color-text-primary); }
+    .review-card__location { font-size: 11px; color: var(--color-text-muted); }
+    .review-card__date { font-size: 11px; color: var(--color-text-muted); white-space: nowrap; }
+    .reviews-aggregate { display: flex; align-items: center; justify-content: center; gap: var(--space-3); margin-bottom: var(--space-10); flex-wrap: wrap; }
+    .reviews-aggregate__stars { display: flex; gap: 3px; }
+    .reviews-aggregate__star { width: 20px; height: 20px; color: var(--color-accent-gold); }
+    .reviews-aggregate__score { font-size: var(--text-2xl); font-weight: 800; color: var(--color-text-primary); }
+    .reviews-aggregate__label { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+    /* ── Final CTA ── */
+    .final-cta { background: var(--color-hero-bg); position: relative; overflow: hidden; text-align: center; }
+    .final-cta__glow {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse, rgba(184,144,42,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta__content { position: relative; z-index: 1; }
+    .final-cta__title { font-size: clamp(1.75rem, 6vw, 3rem); font-weight: 800; color: var(--color-text-on-dark); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: var(--space-4); }
+    .final-cta__title em { font-style: normal; color: var(--color-accent-gold); }
+    .final-cta__sub { font-size: var(--text-lg); color: var(--color-text-muted-on-dark); max-width: 560px; margin: 0 auto var(--space-10); line-height: 1.65; }
+    .final-cta__actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+    .final-cta__note { margin-top: var(--space-6); font-size: var(--text-sm); color: rgba(240,244,248,0.4); }
+
+    /* ── References ── */
+    .references { background: var(--color-hero-bg); border-top: 1px solid var(--color-border-dark); padding: var(--space-16) 0; }
+    .references__title { font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text-muted-on-dark); text-align: center; margin-bottom: var(--space-6); }
+    .references__list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-3); counter-reset: ref; }
+    .references__item { font-size: 11px; line-height: 1.6; color: rgba(240,244,248,0.4); padding-left: var(--space-6); position: relative; }
+    .references__item::before { counter-increment: ref; content: counter(ref); position: absolute; left: 0; color: var(--color-accent-gold); font-weight: 700; }
+    .references__item em { font-style: italic; }
+
+    /* ── Disclaimer ── */
+    .disclaimer { background: var(--color-hero-bg); border-top: 1px solid var(--color-border-dark); padding: var(--space-8) 0; }
+    .disclaimer__text { font-size: var(--text-xs); color: rgba(240,244,248,0.3); line-height: 1.7; max-width: 720px; margin: 0 auto; text-align: center; }
+
+    /* ── Sticky offer bar ── */
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(13,15,17,0.95);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: var(--space-3) var(--space-4);
+      padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+      z-index: 90;
+      display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+      transform: translateY(100%); transition: transform var(--transition-slow);
+    }
+    @media (min-width: 640px) { .sticky-cta { padding: var(--space-3) var(--space-6); } }
+    .sticky-cta--visible { transform: translateY(0); }
+    .sticky-cta__text { font-size: var(--text-sm); color: var(--color-text-muted-on-dark); display: none; }
+    @media (min-width: 640px) { .sticky-cta__text { display: block; } }
+    .sticky-cta__text strong { color: var(--color-accent-gold); }
+  </style>
+</head>
+<body>
+
+  <!-- Reading progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Announcement bar -->
+  <div class="announcement-bar" role="note">
+    <span>✦ Limited-time: <strong>40% off your first month</strong></span>
+    <span class="announcement-bar__sep">•</span>
+    <span>60-day money-back guarantee ✦</span>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav nav--transparent" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#top" class="nav__logo" aria-label="BioStack Labs">
+          <img src="biostack-logo-white.png" alt="BioStack Labs" style="height:36px;width:auto;object-fit:contain;">
+        </a>
+        <div class="nav__links">
+          <a href="#reasons" class="nav__link">Why It Works</a>
+          <a href="#inside" class="nav__link">What's Inside</a>
+          <a href="#pricing" class="nav__link">Pricing</a>
+          <a href="#reviews" class="nav__link">Reviews</a>
+        </div>
+        <a href="#pricing" class="nav__cta">Get 40% Off</a>
+        <button class="nav__hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-menu__close" id="menuClose" aria-label="Close menu">&#x2715;</button>
+    <nav class="mobile-menu__links">
+      <a href="#reasons" class="mobile-menu__link">Why It Works</a>
+      <a href="#inside" class="mobile-menu__link">What's Inside</a>
+      <a href="#pricing" class="mobile-menu__link">Pricing</a>
+      <a href="#reviews" class="mobile-menu__link">Reviews</a>
+      <a href="#pricing" class="btn btn--gold btn--lg" style="margin-top:var(--space-4)">Get 40% Off</a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="top">
+    <div class="hero__bg-grain" aria-hidden="true"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero__grid--split">
+
+        <div class="hero__text">
+        <div class="hero__content hero__content--top">
+          <div class="hero__badge">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            Clinician-loved
+          </div>
+
+          <h1 class="hero__headline">
+            6 Reasons People Over 40 <em>Swear By</em> NAD Regen
+          </h1>
+
+          <span class="hero__rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="hero__content hero__content--bottom">
+          <p class="hero__subheadline">
+            Tired but wired. Foggy by 3pm. Losing your words mid-sentence. You're not falling apart. <strong>Your cells are running low on fuel.</strong> NAD Regen helps your body make, recycle and protect the energy molecule that quietly fades after 40.
+          </p>
+
+          <div class="hero__rating" aria-label="Rated 4.9 out of 5">
+            <div class="hero__rating-stars" aria-hidden="true">
+              <svg class="hero__rating-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hero__rating-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hero__rating-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hero__rating-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="hero__rating-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="hero__rating-score">4.9</span>
+            <span class="hero__rating-label"><strong>300+</strong> sold this week</span>
+          </div>
+
+          <div class="hero__actions">
+            <a href="#pricing" class="btn btn--gold btn--lg">
+              Try It Today, 40% Off
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#reasons" class="btn btn--ghost-light btn--lg">See the 6 reasons</a>
+          </div>
+
+          <div class="hero__guarantee">
+            <span>60-day money-back</span>
+            <span>Cancel anytime</span>
+          </div>
+        </div>
+        </div>
+
+        <div class="hero__visual-wrap">
+          <img src="lifestyle-holding-bottle.jpg" alt="A person holding a bottle of NAD Regen in their kitchen" class="hero__lifestyle" loading="eager" decoding="async">
+          <div class="hero__capsule-callout">
+            <span class="hero__capsule-num">2 caps</span>
+            <span class="hero__capsule-text"><strong>Once a morning.</strong>That's the whole routine.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-strip__inner">
+        <span class="trust-badge"><span>🔬</span> 3rd-party tested</span>
+        <span class="trust-badge"><span>🏭</span> GMP certified</span>
+        <span class="trust-badge"><span>🌱</span> Non-GMO</span>
+        <span class="trust-badge"><span>🇺🇸</span> Made in the USA</span>
+        <span class="trust-badge"><span>🚫</span> No needles, no clinic</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       6 REASONS
+       ============================================================ -->
+  <section class="reasons section" id="reasons" aria-labelledby="reasons-title">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">Why it works</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="reasons-title">6 reasons people over 40 swear by NAD Regen</h2>
+        <p class="section-header__subtitle">Foggy afternoons, missing words, that "tired but wired" hum. Here's why NAD Regen keeps ending up in the morning routine, and staying there.</p>
+      </div>
+
+      <div class="reasons__list">
+
+        <!-- Reason 01 -->
+        <article class="reason reveal">
+          <div class="reason__text">
+            <div class="reason__eyebrow"><span class="reason__eyebrow-icon">⚡</span> Reason 01</div>
+            <h3 class="reason__title">It targets the 3pm crash at the source</h3>
+            <div class="reason__body">
+              <p>That afternoon wall isn't a willpower problem or "just getting older." Every cell in your body runs on a fuel molecule called <strong>NAD+</strong>, and it quietly drops by roughly half by the time you hit 50.<sup><a href="#ref1">1</a></sup></p>
+              <p>NAD Regen is built to refill the tank: it helps your body <strong>make more of its own NAD+</strong> instead of borrowing a jittery lift from caffeine. Steadier energy, without the crash that follows.</p>
+            </div>
+            <div class="reason__tags">
+              <span class="reason__tag">Cellular energy</span>
+              <span class="reason__tag">No caffeine jitters</span>
+            </div>
+          </div>
+          <div class="reason__visual">
+            <div class="stat-hero">
+              <div class="stat-hero__value">~50%</div>
+              <div class="stat-hero__label">of your NAD+ is gone by age 50</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reason 02 -->
+        <article class="reason reason--flip reveal">
+          <div class="reason__text">
+            <div class="reason__eyebrow"><span class="reason__eyebrow-icon">🧠</span> Reason 02</div>
+            <h3 class="reason__title">The fog lifts, and your words come back</h3>
+            <div class="reason__body">
+              <p>Your brain is the hungriest organ you've got. It burns through about a fifth of your body's entire energy budget, so it feels an NAD+ shortfall first: slower recall, losing nouns mid-sentence, reading a paragraph and retaining nothing.</p>
+              <p>Brain fog is one of the most common complaints among adults over 40. You're not the exception, you're the majority. As your cellular fuel is supported, most people describe the same thing: <strong>"I didn't realise how foggy I'd been until it started lifting."</strong></p>
+            </div>
+            <div class="reason__tags">
+              <span class="reason__tag">Sharper focus</span>
+              <span class="reason__tag">Easier recall</span>
+            </div>
+          </div>
+          <div class="reason__visual">
+            <div class="stat-hero">
+              <div class="stat-hero__value">20%</div>
+              <div class="stat-hero__label">of your body's energy is consumed by your brain, so it feels the shortfall first</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reason 03 -->
+        <article class="reason reveal">
+          <div class="reason__text">
+            <div class="reason__eyebrow"><span class="reason__eyebrow-icon">🔁</span> Reason 03</div>
+            <h3 class="reason__title">It fixes the whole system, not just one lever</h3>
+            <div class="reason__body">
+              <p>Most NAD supplements (NMN, NR) only do one thing: pour in more raw material. But after 40 you're also <strong>burning through NAD+ faster</strong>, thanks to an enzyme called CD38 that ramps up with age.<sup><a href="#ref2">2</a></sup> Topping up a leaking tank only gets you so far.</p>
+              <p>NAD Regen pulls all three levers at once: <strong>produce, recycle, and protect.</strong> So you're not just adding fuel, you're keeping more of it.</p>
+            </div>
+          </div>
+          <div class="reason__visual">
+            <div class="trio">
+              <div class="trio__card">
+                <div class="trio__icon">⚙️</div>
+                <div><div class="trio__label">Produce</div><div class="trio__desc">Make more NAD+ (NAD3®)</div></div>
+              </div>
+              <div class="trio__card">
+                <div class="trio__icon">♻️</div>
+                <div><div class="trio__label">Recycle</div><div class="trio__desc">Reuse what you have (Spermidine)</div></div>
+              </div>
+              <div class="trio__card">
+                <div class="trio__icon">🛡️</div>
+                <div><div class="trio__label">Protect</div><div class="trio__desc">Put it to work (Resveratrol)</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reason 04 -->
+        <article class="reason reason--flip reveal">
+          <div class="reason__text">
+            <div class="reason__eyebrow"><span class="reason__eyebrow-icon">💊</span> Reason 04</div>
+            <h3 class="reason__title">No $500 IV drips. No clinic. Just 2 capsules.</h3>
+            <div class="reason__body">
+              <p>NAD IV drips work, and they're expensive, clinic-bound, and gone by the next day. You're renting NAD+ for an afternoon instead of rebuilding your own supply.</p>
+              <p>NAD Regen fits in your bag and your morning: <strong>two capsules with breakfast, three seconds, done.</strong> No needles, no appointments, no drama.</p>
+            </div>
+            <div class="reason__tags">
+              <span class="reason__tag">Travel-friendly</span>
+              <span class="reason__tag">3-second routine</span>
+            </div>
+          </div>
+          <div class="reason__visual">
+            <div class="versus">
+              <div class="versus__card versus__card--bad">
+                <div class="versus__icon">💉</div>
+                <div class="versus__name">NAD IV drip</div>
+                <div class="versus__meta">$500+ · clinic · gone by tomorrow</div>
+              </div>
+              <div class="versus__card versus__card--good">
+                <div class="versus__icon">✨</div>
+                <div class="versus__name">NAD Regen</div>
+                <div class="versus__meta">2 caps · at home · every day</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reason 05 -->
+        <article class="reason reveal">
+          <div class="reason__text">
+            <div class="reason__eyebrow"><span class="reason__eyebrow-icon">⏱️</span> Reason 05</div>
+            <h3 class="reason__title">You actually feel it, usually in 4 to 8 weeks</h3>
+            <div class="reason__body">
+              <p>This isn't a jolt you feel in an hour. It's a restoration. Your NAD+ has been declining for years, so give it a proper run. Most people notice a shift <strong>between weeks 4 and 8</strong>: clearer mornings, fewer "where did my words go?" moments, more get-up-and-go.</p>
+              <p>And if you don't feel a difference? You're covered by a <strong>60-day money-back guarantee.</strong> The risk is on us.</p>
+            </div>
+          </div>
+          <div class="reason__visual">
+            <div class="timeline">
+              <div class="timeline__row timeline__row--muted"><span class="timeline__dot"></span><span class="timeline__when">Day 1</span><span class="timeline__what">Start your daily 2 capsules</span></div>
+              <div class="timeline__row"><span class="timeline__dot"></span><span class="timeline__when">Week 4–8</span><span class="timeline__what">Most people notice the shift</span></div>
+              <div class="timeline__row"><span class="timeline__dot"></span><span class="timeline__when">60 days</span><span class="timeline__what">Money-back guarantee window</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reason 06 -->
+        <article class="reason reason--flip reveal">
+          <div class="reason__text">
+            <div class="reason__eyebrow"><span class="reason__eyebrow-icon">⭐</span> Reason 06</div>
+            <h3 class="reason__title">Thousands of people who were sceptical, too</h3>
+            <div class="reason__body">
+              <p>They'd tried the NMN, the greens powders, the "energy" gummies. Then they tried NAD Regen, and told us the quiet part out loud: <strong>"I stopped for two weeks and immediately noticed."</strong></p>
+              <p>A <strong>4.9-star average</strong> from verified purchasers, and one of the highest reorder rates we've ever seen. Doctors take it. So do their patients.</p>
+            </div>
+            <div class="reason__tags">
+              <span class="reason__tag">4.9 average rating</span>
+              <span class="reason__tag">Verified reviews</span>
+            </div>
+          </div>
+          <div class="reason__visual">
+            <div class="imgstat">
+              <img src="NADRegenOnTable.png" alt="NAD Regen bottle on a wooden table" class="imgstat__img" loading="lazy">
+              <div class="imgstat__overlay">
+                <div class="imgstat__badge"><span class="imgstat__score">4.9★</span> average from verified purchasers</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHAT'S INSIDE
+       ============================================================ -->
+  <section class="inside section" id="inside" aria-labelledby="inside-title">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">What's inside</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="inside-title">Three ingredients. One complete system.</h2>
+        <p class="section-header__subtitle">Not another single-ingredient precursor. A clinically-studied trio that works on every lever of your NAD+ economy.</p>
+      </div>
+
+      <div class="inside__grid">
+        <div class="inside__product reveal">
+          <img src="nad-regen-bottle.png" alt="NAD Regen supplement bottle">
+        </div>
+
+        <div class="ingredients reveal reveal--delay-1">
+          <div class="ingredient">
+            <div class="ingredient__icon">⚙️</div>
+            <div>
+              <div class="ingredient__role">NAD3® · The engine</div>
+              <div class="ingredient__name">Raises your NAD+ status</div>
+              <div class="ingredient__desc">A non-precursor blend clinically shown to raise NAD+ status. Helps your body produce and recycle its own NAD+ while easing the CD38 demand that drains it.<sup><a href="#ref3">3</a></sup></div>
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient__icon">♻️</div>
+            <div>
+              <div class="ingredient__role">Spermidine (Yüth™) · The cleanup crew</div>
+              <div class="ingredient__name">Renews your cells</div>
+              <div class="ingredient__desc">Triggers autophagy, your cells' recycling system, so you reuse the resources you already have.<sup><a href="#ref4">4</a></sup></div>
+            </div>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient__icon">🛡️</div>
+            <div>
+              <div class="ingredient__role">Resveratrol (Veri-te™) · The foreman</div>
+              <div class="ingredient__name">Puts your NAD+ to work</div>
+              <div class="ingredient__desc">Activates the sirtuins that put your NAD+ to work on repair and energy, directing the fuel where it matters.<sup><a href="#ref5">5</a></sup></div>
+            </div>
+          </div>
+          <a href="#pricing" class="btn btn--gold btn--lg" style="margin-top:var(--space-2);align-self:flex-start;">
+            Get NAD Regen at 40% Off
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING
+       ============================================================ -->
+  <section class="pricing section" id="pricing" aria-labelledby="pricing-title">
+    <div class="pricing__glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">Your offer</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="pricing-title">Start today for 40% off</h2>
+        <p class="section-header__subtitle">Subscribe and save 40% on your first month, then 15% every month after. No commitment, pause or cancel anytime.</p>
+      </div>
+
+      <div class="pricing__grid">
+        <div class="plan plan--featured reveal">
+          <div class="plan__flag">Most popular · 40% off</div>
+          <div class="plan__name">Subscribe &amp; Save</div>
+          <div class="plan__sub">1 bottle / 30-day supply, delivered monthly</div>
+          <div class="plan__price">
+            <span class="plan__price-now">$46.20</span>
+            <span class="plan__price-was">$77.00</span>
+          </div>
+          <div class="plan__price-note">first month · then $65.45/mo</div>
+          <div class="plan__perks">
+            <span class="plan__perk">40% off month 1</span>
+            <span class="plan__perk">15% off after</span>
+            <span class="plan__perk">Cancel anytime</span>
+          </div>
+          <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=brainfogv4&utm_content=subscribe" class="btn btn--gold btn--lg">
+            Get NAD Regen at 40% Off
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="plan plan--plain reveal reveal--delay-1">
+          <div class="plan__name">One-Time Purchase</div>
+          <div class="plan__sub">1 bottle / 30-day supply</div>
+          <div class="plan__price">
+            <span class="plan__price-now">$77.00</span>
+          </div>
+          <div class="plan__price-note">one time</div>
+          <div class="plan__perks">
+            <span class="plan__perk">No subscription</span>
+            <span class="plan__perk">60-day guarantee</span>
+          </div>
+          <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=brainfogv4&utm_content=onetime" class="btn btn--gold-outline btn--lg" style="width:100%;justify-content:center;color:var(--color-accent-gold);">
+            Buy One-Time
+          </a>
+        </div>
+      </div>
+
+      <p class="pricing__day reveal">That's about <strong>$1.54/day</strong> your first month to feel like yourself again.</p>
+
+      <div class="guarantee-box reveal">
+        <div class="guarantee-box__icon">🛡️</div>
+        <div>
+          <div class="guarantee-box__title">60-Day Money-Back Guarantee</div>
+          <div class="guarantee-box__text">Give it a proper run. If you don't feel the difference, email us for a full refund, even on empty bottles.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="faq section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">The honest answers</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="faq-title">Questions people ask us most</h2>
+      </div>
+
+      <div class="faq__list">
+        <details class="faq-item reveal">
+          <summary class="faq-item__q">Why NAD Regen instead of NMN or NR?
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-item__a">NMN and NR are <strong>precursors</strong>: raw materials your body uses to make NAD+. They only work on the supply side. But after 40 you're also <strong>burning through NAD+ faster</strong> because of an enzyme called CD38. NAD Regen is built to work on all three levers (produce, recycle and protect), so you keep more of what you make.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__q">What's actually in it, and any allergens?
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-item__a">Two capsules deliver NAD3® (a wasabi-root &amp; theacrine blend), Resveratrol (Veri-te™), Spermidine (Yüth™), niacinamide and AstraGin®. It's non-GMO and made in a GMP-certified, FDA-registered facility in the USA. Full supplement facts are on the product page, so always check them if you have specific sensitivities.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__q">How long until I feel something?
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-item__a">Most people notice a shift <strong>between weeks 4 and 8</strong>: clearer mornings, easier recall, steadier energy. It's a restoration, not a stimulant, so consistency matters. We recommend a 60–90 day run, which your 60-day guarantee comfortably covers.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__q">Can I take it with my other supplements or medications?
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-item__a">NAD Regen is designed to <strong>complement</strong> a healthy routine, not replace anything you already do. It supports the cellular energy side that most stacks don't directly cover. As always, check with your doctor before starting anything new alongside your existing medications.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__q">How does the offer and subscription work?
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-item__a">Subscribe today and get <strong>40% off your first month</strong>, then <strong>15% off every month after</strong>. There's no lock-in, so pause, skip or cancel anytime in a couple of clicks. Prefer no subscription? Grab a one-time bottle instead.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-item__q">What if it doesn't work for me?
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-item__a">Then you don't pay for it. Every order is backed by a <strong>60-day money-back guarantee</strong>. Email us and we'll refund you, even if the bottle's empty. The only risk is not trying.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REVIEWS
+       ============================================================ -->
+  <section class="social-proof section" id="reviews" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="section-header__eyebrow">Real people, real clarity</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-header__title" id="reviews-title">From people who were sceptical too</h2>
+        <p class="section-header__subtitle">Not influencers. Verified purchasers who got their sharpness back.</p>
+      </div>
+
+      <div class="reviews-aggregate reveal" aria-label="Overall customer rating 4.9 out of 5">
+        <div class="reviews-aggregate__stars" aria-hidden="true">
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="reviews-aggregate__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span class="reviews-aggregate__score">4.9</span>
+        <span class="reviews-aggregate__label">from verified purchasers</span>
+      </div>
+
+      <div class="reviews-grid" role="list" aria-label="Customer reviews">
+
+        <article class="review-card reveal" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">The brain fog is gone and I can remember what I read now</h3>
+          <p class="review-card__body">Been using NAD Regen for 2 years now, it took about 4 months to start working but when it did I truly felt it. The brain fog is gone and I can remember what I read now. Highly recommend — stick with it for a couple of months to see results.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Sylridx</span>
+              <span class="review-card__location">🇺🇸 Webster, US</span>
+            </div>
+            <span class="review-card__date">Feb 12, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-1" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+          <h3 class="review-card__title">No more 3pm energy crash</h3>
+          <p class="review-card__body">I have been taking NAD Regen for approximately 7 months now. This addition has skyrocketed my energy levels both mentally and physically. I no longer get the 3pm lack of energy like I used to. The brain fog also lifted very quickly in my case. I'm 67 years of age and still feel sharp.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Frank S.</span>
+              <span class="review-card__location">🇺🇸 Daytona Beach, US</span>
+            </div>
+            <span class="review-card__date">Feb 15, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-2" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">Don't need energy drinks anymore</h3>
+          <p class="review-card__body">It has been nine months to the day since I started. I am 35 and have been on a journey to find the right supplements. Slowly and quietly I didn't need energy drinks anymore and even rarely do I need coffee in the mornings. It took time but the effects are real.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Dana</span>
+              <span class="review-card__location">🇺🇸 Crestwood, US</span>
+            </div>
+            <span class="review-card__date">Feb 13, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-3" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">I can tell a difference every day I take it</h3>
+          <p class="review-card__body">NAD Regen is amazing. I wasn't expecting too much when I first tried it. I've been taking supplements for years to get a bit more out of everyday life. I can genuinely tell a difference when I take this — not a jittery boost, just clearer and more on it.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Smokey</span>
+              <span class="review-card__location">🇺🇸 Richardson, US</span>
+            </div>
+            <span class="review-card__date">Mar 8, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-4" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">Noticing a difference — going to keep going</h3>
+          <p class="review-card__body">I think I am noticing a difference in mental clarity and even energy. Almost through one full bottle, and I plan to continue! It's the kind of improvement that sneaks up on you — one morning you just realise your head feels clearer than it did.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Tyler Kallasy</span>
+              <span class="review-card__location">🇺🇸 Denver, US</span>
+            </div>
+            <span class="review-card__date">Mar 26, 2026</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal--delay-4" role="listitem">
+          <div class="review-card__header">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="review-card__star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="review-card__verified">Verified</span>
+          </div>
+          <h3 class="review-card__title">Day one, more focused and far less stressed</h3>
+          <p class="review-card__body">Day one: more focused, far less stressed (didn't realise I was!). Great product. I look forward to taking it right out of bed. It's become the anchor of my morning routine — clearer head, steadier energy through the afternoon.</p>
+          <div class="review-card__footer">
+            <div class="review-card__author">
+              <span class="review-card__name">Nathan S.</span>
+              <span class="review-card__location">🇺🇸 Nashville, US</span>
+            </div>
+            <span class="review-card__date">May 7, 2026</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+       ============================================================ -->
+  <section class="final-cta section" aria-labelledby="cta-title">
+    <div class="final-cta__glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="final-cta__content">
+        <div class="section-header section-header--center section-header--dark reveal" style="margin-bottom:0">
+          <span class="section-header__eyebrow">Start today</span>
+        </div>
+        <h2 class="final-cta__title reveal reveal--delay-1" id="cta-title">
+          Feel like<br><em>yourself again</em>
+        </h2>
+        <p class="final-cta__sub reveal reveal--delay-2">
+          You're not falling apart. Your cells just need support, and now you know exactly how to give it to them. 40% off your first month, and a 60-day guarantee if it's not for you.
+        </p>
+        <div class="final-cta__actions reveal reveal--delay-3">
+          <a href="#pricing" class="btn btn--gold btn--lg" aria-label="Get NAD Regen at 40% off">
+            Get NAD Regen at 40% Off
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#reasons" class="btn btn--ghost-light btn--lg">Read the 6 reasons</a>
+        </div>
+        <p class="final-cta__note reveal reveal--delay-4">60-day money-back guarantee &bull; Cancel anytime &bull; No lifestyle changes required</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="biostack-logo-white.png" alt="BioStack Labs" style="height:28px;width:auto;margin-bottom:var(--space-4);">
+          <p class="footer__tagline">Science-backed cellular nutrition for peak human performance.</p>
+        </div>
+        <div class="footer__nav-group">
+          <div>
+            <div class="footer__nav-title">Product</div>
+            <ul class="footer__nav-links">
+              <li><a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=brainfogv4" class="footer__nav-link">NAD Regen</a></li>
+              <li><a href="https://biostacklabs.com/collections/all-products" class="footer__nav-link">All Products</a></li>
+              <li><a href="https://biostacklabs.com/blogs/articles" class="footer__nav-link">The Science</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__nav-title">Company</div>
+            <ul class="footer__nav-links">
+              <li><a href="https://biostacklabs.com/pages/about-us" class="footer__nav-link">About BioStack</a></li>
+              <li><a href="https://biostacklabs.com/blogs/articles" class="footer__nav-link">Research</a></li>
+              <li><a href="https://biostacklabs.com/pages/contact-us" class="footer__nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__nav-title">Support</div>
+            <ul class="footer__nav-links">
+              <li><a href="https://biostacklabs.com/pages/contact-us" class="footer__nav-link">FAQ</a></li>
+              <li><a href="https://biostacklabs.com/policies/refund-policy" class="footer__nav-link">Shipping &amp; Returns</a></li>
+              <li><a href="https://biostacklabs.com/policies/privacy-policy" class="footer__nav-link">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 BioStack Labs. All rights reserved.</span>
+        <div class="footer__legal-links">
+          <a href="https://biostacklabs.com/policies/privacy-policy" class="footer__legal-link">Privacy Policy</a>
+          <a href="https://biostacklabs.com/pages/terms-of-service" class="footer__legal-link">Terms of Service</a>
+          <a href="https://biostacklabs.com/pages/terms-of-service" class="footer__legal-link">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       REFERENCES
+       ============================================================ -->
+  <section class="references" aria-labelledby="ref-title">
+    <div class="container">
+      <div class="references__title" id="ref-title">Studies referenced on this page</div>
+      <ol class="references__list" style="list-style:none;padding-left:0;">
+        <li class="references__item" id="ref1"><strong>Massudi H, Grant R, Braidy N, et al.</strong> "Age-associated changes in oxidative stress and NAD+ metabolism in human tissue." <em>PLoS One.</em> 2012;7(7):e42357. PMID: 22848760</li>
+        <li class="references__item" id="ref2"><strong>Camacho-Pereira J, Tarragó MG, Chini CCS, et al.</strong> "CD38 Dictates Age-Related NAD Decline and Mitochondrial Dysfunction through an SIRT3-Dependent Mechanism." <em>Cell Metab.</em> 2016;23(6):1127–1139. PMID: 27304511</li>
+        <li class="references__item" id="ref3"><strong>Patel D, Zode G, Engelen MPKJ.</strong> "A Novel Non-NAD+ Precursor Dietary Supplement (NAD3®) Increases NAD+ Status: A 12-Week Randomized, Placebo-Controlled, Double-Blind Study." <em>Nutrients.</em> 2023;15(6):1349. DOI: 10.3390/nu15061349</li>
+        <li class="references__item" id="ref4"><strong>Eisenberg T, Knauer H, Schauer A, et al.</strong> "Induction of autophagy by spermidine promotes longevity." <em>Nat Cell Biol.</em> 2009;11(11):1305–1314. PMID: 19801973</li>
+        <li class="references__item" id="ref5"><strong>Price NL, Gomes AP, Ling AJ, et al.</strong> "SIRT1 is required for AMPK activation and the beneficial effects of resveratrol on mitochondrial function." <em>Cell Metab.</em> 2012;15(5):675–690. PMID: 22560220</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer" role="note" aria-label="Legal disclaimer">
+    <div class="container">
+      <p class="disclaimer__text">
+        * These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. The information on this page is for educational purposes only and is not a substitute for professional medical advice. Always consult your physician before starting any new supplement regimen.
+      </p>
+    </div>
+  </div>
+
+  <!-- Sticky offer bar -->
+  <div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Quick purchase CTA">
+    <p class="sticky-cta__text"><strong>40% off your first month</strong> — NAD Regen · 60-day guarantee</p>
+    <a href="#pricing" class="btn btn--gold" style="white-space:nowrap" aria-label="Get the 40% off offer">Get Offer</a>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    const progressBar = document.getElementById('progressBar');
+    const stickyCta = document.getElementById('stickyCta');
+
+    function onScroll() {
+      const scrolled = window.scrollY;
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = total > 0 ? (scrolled / total) * 100 : 0;
+      progressBar.style.width = pct + '%';
+
+      if (scrolled > 600) {
+        stickyCta.classList.add('sticky-cta--visible');
+      } else {
+        stickyCta.classList.remove('sticky-cta--visible');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function openMenu() {
+      mobileMenu.classList.add('mobile-menu--open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('modal-open');
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('mobile-menu--open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('modal-open');
+    }
+    menuBtn.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    mobileMenu.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  </script>
+
+  <!-- GoAffPro Affiliate Tracking -->
+  <script type="text/javascript" src="https://api.goaffpro.com/loader.js?shop=biostack-labs.myshopify.com"></script>
+
+</body>
+</html>
