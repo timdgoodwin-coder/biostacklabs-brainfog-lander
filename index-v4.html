@@ -25,11 +25,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    // Report this advertorial under a unique virtual path in GA4 so it doesn't
-    // collapse into "/". Traffic still hits the root URL; only reporting changes.
-    // Query string is preserved so UTMs / ad params keep flowing through.
+
     gtag('config', 'G-HWG2MFCJFK', {
-      page_path: '/lp/brainfog' + window.location.search,
       page_location: 'https://brainfog.biostacklabs.com/lp/brainfog' + window.location.search
     });
   </script>
