@@ -1052,7 +1052,7 @@
             <span class="plan__perk">15% off after</span>
             <span class="plan__perk">Cancel anytime</span>
           </div>
-          <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=brainfogv4&utm_content=subscribe" class="btn btn--gold btn--lg" data-atc="subscribe" data-atc-value="46.20">
+          <a href="https://biostacklabs.com/cart/42457189810366:1?selling_plan=15615787198" class="btn btn--gold btn--lg" data-atc="subscribe" data-atc-value="46.20">
             Get NAD Regen at 40% Off
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -1069,7 +1069,7 @@
             <span class="plan__perk">No subscription</span>
             <span class="plan__perk">60-day guarantee</span>
           </div>
-          <a href="https://biostacklabs.com/products/nad-regen?utm_source=brainfog&utm_medium=lander&utm_campaign=brainfogv4&utm_content=onetime" class="btn btn--gold-outline btn--lg" style="width:100%;justify-content:center;color:var(--color-accent-gold);" data-atc="onetime" data-atc-value="77.00">
+          <a href="https://biostacklabs.com/cart/42457189810366:1" class="btn btn--gold-outline btn--lg" style="width:100%;justify-content:center;color:var(--color-accent-gold);" data-atc="onetime" data-atc-value="77.00">
             Buy One-Time
           </a>
         </div>
@@ -1468,18 +1468,31 @@
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
     mobileMenu.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
-    // ── Conversion tracking: AddToCart on outbound buy buttons ──
+    // ── Add to cart + AddToCart conversion tracking on buy buttons ──
     (function () {
       var PRODUCT_NAME = 'NAD Regen';
       var CONTENT_ID = 'nad-regen';
+      var STORE = 'https://biostacklabs.com';
+      var VARIANT_ID = '42457189810366';
+      var SELLING_PLAN_ID = '15615787198';
+      var submitting = false;
       document.querySelectorAll('[data-atc]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (submitting) return;
+          submitting = true;
+
           var value = parseFloat(btn.getAttribute('data-atc-value')) || 0;
           var variant = btn.getAttribute('data-atc') || '';
+          var isSub = variant === 'subscribe';
+
+          btn.setAttribute('aria-busy', 'true');
+          btn.style.opacity = '0.7';
+
           var customData = {
             content_name: PRODUCT_NAME,
             content_ids: [CONTENT_ID],
-            contents: [{ id: CONTENT_ID, quantity: 1, item_price: value }],
+            contents: [{ id: VARIANT_ID, quantity: 1, item_price: value }],
             content_type: 'product',
             value: value,
             currency: 'USD'
@@ -1490,8 +1503,24 @@
           if (window.gtag) gtag('event', 'add_to_cart', {
             currency: 'USD',
             value: value,
-            items: [{ item_id: CONTENT_ID, item_name: PRODUCT_NAME, item_variant: variant, price: value, quantity: 1 }]
+            items: [{ item_id: VARIANT_ID, item_name: PRODUCT_NAME, item_variant: variant, price: value, quantity: 1 }]
           });
+
+          // Add to cart via a real form POST to /cart/add, then land on /cart
+          var f = document.createElement('form');
+          f.method = 'POST';
+          f.action = STORE + '/cart/add';
+          f.acceptCharset = 'UTF-8';
+          function field(name, val) {
+            var i = document.createElement('input');
+            i.type = 'hidden'; i.name = name; i.value = val; f.appendChild(i);
+          }
+          field('id', VARIANT_ID);
+          field('quantity', '1');
+          if (isSub) field('selling_plan', SELLING_PLAN_ID);
+          field('return_to', '/cart');
+          document.body.appendChild(f);
+          f.submit();
         });
       });
     })();
